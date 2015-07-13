@@ -108,7 +108,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
 ]
 from oscar import get_core_apps
-INSTALLED_APPS = INSTALLED_APPS + get_core_apps()
+INSTALLED_APPS = INSTALLED_APPS + get_core_apps(['dashboard', 'dashboard.promotions'])
 
 MIDDLEWARE_CLASSES = (
     'debug_toolbar.middleware.DebugToolbarMiddleware',
@@ -207,8 +207,7 @@ USE_L10N = True
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
 MEDIA_ROOT = location("media")
-print 'MEDIA_ROOT'
-print MEDIA_ROOT
+
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
@@ -221,8 +220,7 @@ MEDIA_URL = '/media/'
 
 STATIC_URL = '/static/'
 STATIC_ROOT = location('static')
-print 'STATIC_ROOT'
-print STATIC_ROOT
+
 #STATICFILES_DIRS = (
 #    location('static/'),
 #)
@@ -276,23 +274,23 @@ HAYSTACK_CONNECTIONS = {
 
 # Implicit setup can often lead to problems with circular imports, so we
 # explicitly wire up the toolbar
-# DEBUG_TOOLBAR_PATCH_SETTINGS = False
-# DEBUG_TOOLBAR_PANELS = [
-#     'debug_toolbar.panels.versions.VersionsPanel',
-#     'debug_toolbar.panels.timer.TimerPanel',
-#     'debug_toolbar.panels.settings.SettingsPanel',
-#     'debug_toolbar.panels.headers.HeadersPanel',
-#     'debug_toolbar.panels.request.RequestPanel',
-#     'debug_toolbar.panels.sql.SQLPanel',
-#     'debug_toolbar.panels.staticfiles.StaticFilesPanel',
-#     'debug_toolbar.panels.templates.TemplatesPanel',
-#     'template_timings_panel.panels.TemplateTimings.TemplateTimings',
-#     'debug_toolbar.panels.cache.CachePanel',
-#     'debug_toolbar.panels.signals.SignalsPanel',
-#     'debug_toolbar.panels.logging.LoggingPanel',
-#     'debug_toolbar.panels.redirects.RedirectsPanel',
-# ]
-# INTERNAL_IPS = ['127.0.0.1', '::1']
+DEBUG_TOOLBAR_PATCH_SETTINGS = False
+DEBUG_TOOLBAR_PANELS = [
+    'debug_toolbar.panels.versions.VersionsPanel',
+    'debug_toolbar.panels.timer.TimerPanel',
+    'debug_toolbar.panels.settings.SettingsPanel',
+    'debug_toolbar.panels.headers.HeadersPanel',
+    'debug_toolbar.panels.request.RequestPanel',
+    'debug_toolbar.panels.sql.SQLPanel',
+    'debug_toolbar.panels.staticfiles.StaticFilesPanel',
+    'debug_toolbar.panels.templates.TemplatesPanel',
+    'template_timings_panel.panels.TemplateTimings.TemplateTimings',
+    'debug_toolbar.panels.cache.CachePanel',
+    'debug_toolbar.panels.signals.SignalsPanel',
+    'debug_toolbar.panels.logging.LoggingPanel',
+    'debug_toolbar.panels.redirects.RedirectsPanel',
+]
+INTERNAL_IPS = ['127.0.0.1', '::1']
 
 # ==============
 # Oscar settings
@@ -303,7 +301,7 @@ from oscar.defaults import *
 # Meta
 # ====
 
-OSCAR_DEFAULT_CURRENCY = 'MXN'
+OSCAR_DEFAULT_CURRENCY = u'MX'
 
 OSCAR_PRODUCTS_PER_PAGE = 12
 
@@ -393,3 +391,5 @@ try:
     from settings_local import *
 except ImportError:
     pass
+print 'currency settings'
+print OSCAR_DEFAULT_CURRENCY
