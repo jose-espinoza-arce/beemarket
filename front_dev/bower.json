@@ -1,0 +1,21 @@
+{
+  "name": "newton_theme",
+  "version": "0.0.1",
+  "homepage": "https://github.com/jose-espinoza-arce/beemarket",
+  "description": "ecommerce theme",
+  "main": "Gulpfile.js",
+  "authors": [
+    "Noe Sanchez"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}
