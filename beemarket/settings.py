@@ -59,7 +59,7 @@ TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'es-mx'
+LANGUAGE_CODE = 'es-MX'
 
 # Includes all languages that have >50% coverage in Transifex
 # Taken from Django's default setting for LANGUAGES
@@ -108,7 +108,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
 ]
 from oscar import get_core_apps
-INSTALLED_APPS = INSTALLED_APPS + get_core_apps(['dashboard', 'dashboard.promotions'])
+INSTALLED_APPS = INSTALLED_APPS + get_core_apps(['search', 'dashboard', 'dashboard.promotions'])
 
 MIDDLEWARE_CLASSES = (
     'debug_toolbar.middleware.DebugToolbarMiddleware',
@@ -136,10 +136,7 @@ ROOT_URLCONF = 'beemarket.urls'
 # Add another path to Oscar's templates.  This allows templates to be
 # customised easily.
 from oscar import OSCAR_MAIN_TEMPLATE_DIR
-#TEMPLATE_DIRS = (
-#    location('templates'),
-#    OSCAR_MAIN_TEMPLATE_DIR,
-#)
+
 
 
 # List of callables that know how to import templates from various sources.
@@ -301,7 +298,14 @@ from oscar.defaults import *
 # Meta
 # ====
 
-OSCAR_DEFAULT_CURRENCY = u'MX'
+OSCAR_DEFAULT_CURRENCY = u'MXN'
+
+OSCAR_PROMOTION_POSITIONS = (('page', 'Page'),
+                             ('right', 'Right-hand sidebar'),
+                             ('left', 'Left-hand sidebar'),
+                             ('1x1y', 'Square banner'),
+                             ('2x1y', 'Horizontal banner'),
+                             ('1x2y', 'Vertical banner'),)
 
 OSCAR_PRODUCTS_PER_PAGE = 12
 
@@ -391,5 +395,3 @@ try:
     from settings_local import *
 except ImportError:
     pass
-print 'currency settings'
-print OSCAR_DEFAULT_CURRENCY
