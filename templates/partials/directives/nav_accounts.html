@@ -18,6 +18,6 @@
         {% endif %}
         <li><a id="logout_link" href="{% url 'customer:logout' %}">{% trans "Logout" %}</a></li>
     {% else %}
-        <li><a id="login_link" href="{% url 'customer:login' %}">{% trans "Login or register" %}</a></li>
+        <li><a id="login_link" href="{% url 'customer:login' %}">{% trans "Log in" %}</a></li>
     {% endif %}
 </ul>
