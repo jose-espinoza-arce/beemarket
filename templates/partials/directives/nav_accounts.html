@@ -1,5 +1,5 @@
 {% load i18n %}
-<ul class="nav navbar-nav navbar-right">
+<ul class="u-listUnstyled">
     {% if user.is_authenticated %}
         <li>
             {% if num_unread_notifications > 0 %}
@@ -14,10 +14,10 @@
             {% endif %}
         </li>
         {% if user.is_staff or perms.partner.dashboard_access %}
-            <li><a href="{% url 'dashboard:index' %}"><i class="icon-list-ul"></i> {% trans "Dashboard" %}</a></li>
+            <li><a href="{% url 'dashboard:index' %}"> {% trans "Dashboard" %}</a></li>
         {% endif %}
-        <li><a id="logout_link" href="{% url 'customer:logout' %}"><i class="icon-signout"></i> {% trans "Logout" %}</a></li>
+        <li><a id="logout_link" href="{% url 'customer:logout' %}">{% trans "Logout" %}</a></li>
     {% else %}
-        <li><a id="login_link" href="{% url 'customer:login' %}"><i class="icon-signin"></i> {% trans "Login or register" %}</a></li>
+        <li><a id="login_link" href="{% url 'customer:login' %}">{% trans "Login or register" %}</a></li>
     {% endif %}
 </ul>

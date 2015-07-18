@@ -9,6 +9,13 @@ gulp.task('styles', function() {
    	.pipe(gulp.dest('../static/styles/'));
 });
 
+gulp.task('scripts', function() {
+	return gulp.src('scripts/*.js')
+	  .pipe($.concat('all.js'))
+	  .pipe(gulp.dest('../static/scripts/'));
+});
+
 gulp.task('watch',function() {
-	gulp.watch(['styles/*.scss', 'styles/**/*.scss'],['styles']);
+	gulp.watch('styles/**/*.scss',['styles']);
+	gulp.watch(['scripts/*.js', 'scripts/**/*.js'],['scripts']);
 });
