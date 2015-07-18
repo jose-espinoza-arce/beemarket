@@ -1,8 +1,5 @@
 {% load i18n %}
 <ul class="u-listUnstyled">
-    {% for wishlist in wish_lists %}
-        {{ wishlist.lines.count }}
-     {% endfor %}
     {% if user.is_authenticated %}
         <li>
             {% if num_unread_notifications > 0 %}
