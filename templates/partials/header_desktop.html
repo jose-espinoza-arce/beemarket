@@ -1,0 +1,49 @@
+<div class="AccessNav">
+	<!-- Lang -->
+	<div class="AccessNav-item AccessNav-item--lang">
+		<div class="LangSelect">
+			{% include "partials/directives/lang_select.html" %}
+		</div>
+	</div>
+
+	<!-- Accounts -->
+	<div class="AccessNav-item AccessNav-item--accounts">
+		<div class="NavAccounts">
+			{% include "partials/directives/nav_accounts.html" %}
+		</div>
+	</div>
+
+	<!-- Whislist -->
+	<div class="AccessNav-item AccessNav-item--whislist">
+		<div class="Whislist">
+			
+		</div>
+	</div>
+	
+	<!-- Mini Basket -->
+	<div class="AccessNav-item AccessNav-item--minibasket">
+		<div class="MiniBasket">
+			{% include "partials/mini_basket.html" %}
+		</div>
+	</div>
+</div>
+
+<div class="SiteNav">
+	<!-- Brand -->
+	<div class="SiteNav-item SiteNav-item--brand">
+		<div class="Brand">
+			{% include "partials/brand.html" %}
+		</div>
+	</div>
+	
+	<!-- Main Menu -->
+	<div class="SiteNav-item SiteNav-item--menu">
+		<nav class="Menu">
+			{% block navigation %}
+			    {% include "partials/nav_primary.html" %}
+			{% endblock %}
+		</nav>
+	</div>
+
+</div>
+

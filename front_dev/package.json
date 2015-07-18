@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/jose-espinoza-arce/beemarket/issues"
   },
-  "homepage": "https://github.com/jose-espinoza-arce/beemarket#readme"
+  "homepage": "https://github.com/jose-espinoza-arce/beemarket#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-ruby-sass": "^1.0.5"
+  }
 }
