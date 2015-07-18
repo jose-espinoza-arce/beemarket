@@ -1,4 +1,11 @@
 /* General Colors */
+$color-black-base: #1E1E1E;
+$color-black-tint: #4F4F52;
+$color-black-shade: #252526;
+
+/* Header */
+$acces-nav-height: 40px;
+
 $color-critical: #c40022;
 $color-link: #1e6dc0 !default;
 $color-ok: #00a96d;
@@ -35,5 +42,6 @@ $dim-device-width-small: 768px;
 $dim-device-width-medium: 992px;
 $dim-device-width-large: 1200px;
 
-
+/* Fonts */
+$font-base: 'Montserrat', sans-serif;
 

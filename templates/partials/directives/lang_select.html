@@ -1,10 +1,9 @@
 {% load i18n %}
 {% if LANGUAGES|length > 1 %}
-    <form id="language_selector" class="navbar-left navbar-form" action="{% url 'set_language' %}" method="post">
+    <form id="language_selector" class="" action="{% url 'set_language' %}" method="post">
         {% csrf_token %}
         <input name="next" type="hidden" value="{{ language_neutral_url_path }}" />
-        <div class="form-group">
-            <select name="language" class="form-control">
+            <select name="language" class="LangSelect-sct">
                 {% get_language_info_list for LANGUAGES as languages %}
                 {% for language in languages %}
                     <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE%} selected="selected"{% endif %}>
@@ -12,7 +11,5 @@
                     </option>
                 {% endfor %}
             </select>
-        </div>
-        <button class="btn btn-default" type="submit" data-loading-text="{% trans 'Submitting...' %}">{% trans "Go" %}</button>
     </form>
 {% endif %}
