@@ -70,8 +70,8 @@ LANGUAGES = (
     # ('cs', gettext_noop('Czech')),
     # ('da', gettext_noop('Danish')),
     # ('de', gettext_noop('German')),
-    ('en-gb', gettext_noop('British English')),
-    ('es-mx', gettext_noop('Spanish')),
+    ('en', 'English'),
+    ('es', 'Spanish'),
     #('el', gettext_noop('Greek')),
     # ('fi', gettext_noop('Finnish')),
     # ('fr', gettext_noop('French')),
@@ -108,7 +108,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
 ]
 from oscar import get_core_apps
-INSTALLED_APPS = INSTALLED_APPS + get_core_apps(['search', 'dashboard', 'dashboard.promotions'])
+INSTALLED_APPS = INSTALLED_APPS + get_core_apps(['dashboard', 'dashboard.promotions'])
 
 MIDDLEWARE_CLASSES = (
     'debug_toolbar.middleware.DebugToolbarMiddleware',
