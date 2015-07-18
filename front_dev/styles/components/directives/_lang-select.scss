@@ -1,7 +1,7 @@
 .LangSelect
 {
 	border-right: 1px solid $color-black-tint;
-
+	display: table-cell;
 	@include e(sct)
 	{
 		cursor: pointer;
