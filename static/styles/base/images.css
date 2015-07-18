@@ -1,0 +1,17 @@
+/*
+ * All images used in the site are defined here.
+ * These classes are not available to @extend
+ * in other sass files.
+ */
+/*
+ * Extend this class to make the element to behave like a standard image tag.
+ */
+.img {
+  background-clip: padding-box;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  display: inline-block; }
+
+/**
+ * Mixin shortcut for creating image classes.
+ */

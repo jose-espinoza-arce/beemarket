@@ -1,0 +1,179 @@
+/* External Libraries */
+/* Mixins */
+/* KeyFrame animation mixin
+ * @author: sathify
+ * @mixin: animation
+ */
+/* Simplified BEM mixin
+ * @author: sathify
+ * @mixin: bem
+ */
+/* Mixins to easily set some styles for all icons
+ * contained within a css block.
+ * @author: sathify
+ * @mixin: icon
+ */
+/* General Colors */
+/* Header */
+/* Borders */
+/* Body */
+/* Footer */
+/* Buttons */
+/* Disabled buttons */
+/* Responsive Dimensions*/
+/* Fonts */
+dl {
+  margin: 4px 0; }
+
+dd,
+dt {
+  display: inline-block; }
+
+/* Icons */
+.u-largeSpinnerIcon {
+  color: #999;
+  font-size: 30px;
+  margin-top: 60px; }
+
+.u-fontawesomeCheck {
+  color: #00a96d;
+  font-size: 14px; }
+
+.u-textLarger {
+  font-size: 140%; }
+
+/* min width and min height */
+.u-maxWidth-100 {
+  max-width: 100px; }
+
+.u-minHeight-100 {
+  min-height: 100px; }
+
+.u-maxWidth-200 {
+  max-width: 200px; }
+
+.u-minHeight-200 {
+  min-height: 200px; }
+
+.u-maxWidth-300 {
+  max-width: 300px; }
+
+.u-minHeight-300 {
+  min-height: 300px; }
+
+.u-maxWidth-400 {
+  max-width: 400px; }
+
+.u-minHeight-400 {
+  min-height: 400px; }
+
+.u-maxWidth-500 {
+  max-width: 500px; }
+
+.u-minHeight-500 {
+  min-height: 500px; }
+
+.u-maxWidth-600 {
+  max-width: 600px; }
+
+.u-minHeight-600 {
+  min-height: 600px; }
+
+.u-maxWidth-700 {
+  max-width: 700px; }
+
+.u-minHeight-700 {
+  min-height: 700px; }
+
+.u-maxWidth-800 {
+  max-width: 800px; }
+
+.u-minHeight-800 {
+  min-height: 800px; }
+
+.u-maxWidth-900 {
+  max-width: 900px; }
+
+.u-minHeight-900 {
+  min-height: 900px; }
+
+.u-maxWidth-1000 {
+  max-width: 1000px; }
+
+.u-minHeight-1000 {
+  min-height: 1000px; }
+
+.u-maxWidth-1100 {
+  max-width: 1100px; }
+
+.u-minHeight-1100 {
+  min-height: 1100px; }
+
+.u-maxWidth-1200 {
+  max-width: 1200px; }
+
+.u-minHeight-1200 {
+  min-height: 1200px; }
+
+/* truncate label */
+.u-labelTruncator {
+  overflow: hidden;
+  padding-right: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%; }
+
+/* list whitout style */
+.u-listUnstyled {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-smooth: never;
+  margin: 0;
+  -webkit-font-smoothing: antialiased; }
+
+.AccessNav {
+  height: 40px;
+  background-color: #1E1E1E; }
+  .AccessNav-item {
+    display: inline-block; }
+
+.NavAccounts li {
+  display: inline-block; }
+  .NavAccounts li a {
+    font-size: 12px;
+    font-weight: bolder;
+    line-height: 40px;
+    display: block;
+    height: 40px;
+    padding: 0 1em;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: white; }
+    .NavAccounts li a:hover {
+      background-color: #252526; }
+
+.LangSelect {
+  border-right: 1px solid #4F4F52; }
+  .LangSelect-sct {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    padding: 1em;
+    background: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0; }
+    .LangSelect-sct:hover {
+      background-color: #252526; }
