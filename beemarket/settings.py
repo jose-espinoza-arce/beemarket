@@ -59,35 +59,18 @@ TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'es-MX'
+LANGUAGE_CODE = 'es'
 
 # Includes all languages that have >50% coverage in Transifex
 # Taken from Django's default setting for LANGUAGES
-gettext_noop = lambda s: s
+LOCALE_PATHS = (os.path.join(BASE_DIR, "locale"),)
 LANGUAGES = (
-    # ('ar', gettext_noop('Arabic')),
-    # ('ca', gettext_noop('Catalan')),
-    # ('cs', gettext_noop('Czech')),
-    # ('da', gettext_noop('Danish')),
-    # ('de', gettext_noop('German')),
     ('en', 'English'),
     ('es', 'Spanish'),
-    #('el', gettext_noop('Greek')),
-    # ('fi', gettext_noop('Finnish')),
-    # ('fr', gettext_noop('French')),
-    # ('it', gettext_noop('Italian')),
-    # ('ko', gettext_noop('Korean')),
-    # ('nl', gettext_noop('Dutch')),
-    # ('pl', gettext_noop('Polish')),
-    # ('pt', gettext_noop('Portuguese')),
-    # ('pt-br', gettext_noop('Brazilian Portuguese')),
-    # ('ro', gettext_noop('Romanian')),
-    # ('ru', gettext_noop('Russian')),
-    # ('sk', gettext_noop('Slovak')),
-    # ('uk', gettext_noop('Ukrainian')),
-    # ('zh-cn', gettext_noop('Simplified Chinese')),
 )
+USE_I18N = True
 
+USE_L10N = True
 
 # Application definition
 
@@ -196,9 +179,7 @@ DATABASES = {
 
 SITE_ID = 1
 
-USE_I18N = True
 
-USE_L10N = True
 
 
 # Absolute path to the directory that holds media.
