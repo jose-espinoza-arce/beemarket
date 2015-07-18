@@ -108,7 +108,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
 ]
 from oscar import get_core_apps
-INSTALLED_APPS = INSTALLED_APPS + get_core_apps(['search', 'dashboard', 'dashboard.promotions'])
+INSTALLED_APPS = INSTALLED_APPS + get_core_apps(['dashboard', 'dashboard.promotions'])
 
 MIDDLEWARE_CLASSES = (
     'debug_toolbar.middleware.DebugToolbarMiddleware',
