@@ -60,7 +60,7 @@ logs/
 
 whoosh_index/
 
-static/
+static/oscar
 
 ### OSX ###
 .DS_Store
