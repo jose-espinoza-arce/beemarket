@@ -1,0 +1,8 @@
+{% load i18n %}
+<div class="Wishlist">
+	<a href="#" class="Wishlist-toggler">
+		<span class="Wishlist-icon">icon</span>
+		<span class="Wishlist-label">{% trans "My wishlist" %}</span>
+		<span class="Wishlist-counter">{{ wish_list.lines.count }}</span>
+	</a>
+</div>
