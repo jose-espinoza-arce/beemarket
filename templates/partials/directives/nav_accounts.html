@@ -1,23 +1,25 @@
 {% load i18n %}
-<ul class="u-listUnstyled">
-    {% if user.is_authenticated %}
-        <li>
-            {% if num_unread_notifications > 0 %}
-                {# If user has new notifications - we change account link to go to inbox #}
-                <a href="{% url 'customer:notifications-inbox' %}">
-                    <i class="icon-user"></i>
-                    {% trans "Account" %}
-                    <span class="label label-important">{{ num_unread_notifications }}</span>
-                </a>
-            {% else %}
-                <a href="{% url 'customer:summary' %}"><i class="icon-user"></i> {% trans "Account" %}</a>
+<div class="NavAccounts">
+    <ul class="u-listUnstyled">
+        {% if user.is_authenticated %}
+            <li>
+                {% if num_unread_notifications > 0 %}
+                    {# If user has new notifications - we change account link to go to inbox #}
+                    <a href="{% url 'customer:notifications-inbox' %}">
+                        <i class="fa fa-user fa-2x icon-user"></i>
+                        {% trans "Account" %}
+                        <span class="label label-important">{{ num_unread_notifications }}</span>
+                    </a>
+                {% else %}
+                    <a href="{% url 'customer:summary' %}"><i class="fa fa-user fa-2x icon-user"></i> {% trans "Account" %}</a>
+                {% endif %}
+            </li>
+            {% if user.is_staff or perms.partner.dashboard_access %}
+                <li><a href="{% url 'dashboard:index' %}"> {% trans "Dashboard" %}</a></li>
             {% endif %}
-        </li>
-        {% if user.is_staff or perms.partner.dashboard_access %}
-            <li><a href="{% url 'dashboard:index' %}"> {% trans "Dashboard" %}</a></li>
+            <li><a id="logout_link" href="{% url 'customer:logout' %}">{% trans "Logout" %}</a></li>
+        {% else %}
+            <li><a id="login_link" href="{% url 'customer:login' %}">{% trans "Log in" %}</a></li>
         {% endif %}
-        <li><a id="logout_link" href="{% url 'customer:logout' %}">{% trans "Logout" %}</a></li>
-    {% else %}
-        <li><a id="login_link" href="{% url 'customer:login' %}">{% trans "Log in" %}</a></li>
-    {% endif %}
-</ul>
+    </ul>
+</div>

@@ -138,29 +138,35 @@ body {
 .AccessNav {
   height: 40px;
   background-color: #1E1E1E; }
+  .AccessNav-right {
+    text-align: right;
+    float: right; }
   .AccessNav-item {
     display: inline-block; }
 
-.NavAccounts li {
-  display: table-cell;
-  border-right: 1px solid #4F4F52;
-  border-left: 1px solid #4F4F52;
-  cursor: pointer; }
-  .NavAccounts li:last-child {
-    border-left: 0; }
-  .NavAccounts li a {
-    font-size: 12px;
-    font-weight: bolder;
-    line-height: 40px;
-    display: block;
-    height: 40px;
-    padding: 0 1em;
-    text-decoration: none;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: white; }
-    .NavAccounts li a:hover {
-      background-color: #252526; }
+.NavAccounts {
+  float: left; }
+  .NavAccounts li {
+    display: table-cell;
+    /*border-right: 1px solid $color-black-tint;*/
+    border-left: 1px solid #4F4F52;
+    cursor: pointer;
+    /*&:last-child {
+      border-left: 0;
+    }*/ }
+    .NavAccounts li a {
+      font-size: 12px;
+      font-weight: bolder;
+      line-height: 40px;
+      display: block;
+      height: 40px;
+      padding: 0 1em;
+      text-decoration: none;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: white; }
+      .NavAccounts li a:hover {
+        background-color: #252526; }
 
 .LangSelect {
   border-right: 1px solid #4F4F52;
@@ -183,3 +189,112 @@ body {
     border-radius: 0; }
     .LangSelect-sct:hover {
       background-color: #252526; }
+
+.Wishlist {
+  display: table-cell;
+  border-left: 1px solid #4F4F52;
+  cursor: pointer; }
+  .Wishlist-toggler {
+    font-size: 12px;
+    font-weight: bolder;
+    line-height: 40px;
+    display: block;
+    height: 40px;
+    padding: 0 1em;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: white; }
+    .Wishlist-toggler:hover {
+      background-color: #252526; }
+  .Wishlist-icon {
+    width: 24px;
+    height: 24px;
+    color: #4F4F52;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 24px;
+    margin-right: 12px; }
+  .Wishlist-label {
+    margin-right: 12px; }
+  .Wishlist-counter {
+    width: 24px;
+    height: 24px;
+    background-color: #4F4F52;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 24px; }
+
+.Minibasket {
+  display: table-cell;
+  border-left: 1px solid #4F4F52;
+  cursor: pointer;
+  /*  .btn-default {
+      font-size: 12px;
+      font-weight: bolder;
+      line-height: $acces-nav-height;
+  
+      display: block;
+  
+      height: $acces-nav-height;
+      padding: 0 1em;
+  
+      text-decoration: none;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+  
+      background-color: $color-black-base;
+  
+      border: none;
+      border-radius: 0;
+      color: white;
+      &:hover {
+        color: white;
+        background-color: $color-black-shade;
+      }
+    }*/ }
+  .Minibasket-toggler {
+    font-size: 12px;
+    font-weight: bolder;
+    line-height: 40px;
+    display: block;
+    height: 40px;
+    padding: 0 1em;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: white; }
+    .Minibasket-toggler:hover {
+      background-color: #252526; }
+  .Minibasket-icon {
+    width: 24px;
+    height: 24px;
+    color: #4F4F52;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 24px;
+    margin-right: 12px; }
+  .Minibasket-label {
+    margin-right: 12px; }
+  .Minibasket-counter {
+    width: 24px;
+    height: 24px;
+    background-color: #d54e4c;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 24px; }
+  .Minibasket-container {
+    width: 500px;
+    height: 300px; }
+  .Minibasket-item {
+    text-align: center; }
+    .Minibasket-item img {
+      width: 150px !important; }
+
+.SiteNav {
+  position: relative;
+  z-index: 90; }

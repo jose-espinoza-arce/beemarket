@@ -57,9 +57,7 @@ TIME_ZONE = 'America/Mexico_City'
 
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
-# Language code for this installation. All choices can be found here:
-# http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'es'
+
 
 # Includes all languages that have >50% coverage in Transifex
 # Taken from Django's default setting for LANGUAGES
@@ -276,6 +274,11 @@ INTERNAL_IPS = ['127.0.0.1', '::1']
 # ==============
 
 from oscar.defaults import *
+
+
+# Language code for this installation. All choices can be found here:
+# http://www.i18nguy.com/unicode/language-identifiers.html
+LANGUAGE_CODE = 'es'
 
 # Meta
 # ====

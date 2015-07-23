@@ -1,57 +1,58 @@
-body
-{
-	font-family: $font-base;
-	font-smooth: never;
+body {
+  font-family: $font-base;
+  font-smooth: never;
 
-	margin: 0;
+  margin: 0;
 
-	-webkit-font-smoothing: antialiased;
-}
-.AccessNav
-{
-	height: $acces-nav-height;
-
-	background-color: $color-black-base;
-
-	@include e(item)
-	{
-		display: inline-block;
-	}
+  -webkit-font-smoothing: antialiased;
 }
 
-.NavAccounts
-{
-	li
-	{
-		display: table-cell;
-		border-right: 1px solid $color-black-tint;
-		border-left: 1px solid $color-black-tint;
-		cursor: pointer;
+.AccessNav {
+  height: $acces-nav-height;
 
-		&:last-child {
-			border-left: 0;
-		}
-		a
-		{
-			font-size: 12px;
-			font-weight: bolder;
-			line-height: $acces-nav-height;
+  background-color: $color-black-base;
 
-			display: block;
+  @include e(right) {
+    text-align: right;
+    float: right;
+  }
 
-			height: $acces-nav-height;
-			padding: 0 1em;
+  @include e(item) {
+    display: inline-block;
+  }
+
+}
+
+.NavAccounts {
+  float: left;
+  li {
+    display: table-cell;
+    /*border-right: 1px solid $color-black-tint;*/
+    border-left: 1px solid $color-black-tint;
+    cursor: pointer;
 
 
-			text-decoration: none;
-			letter-spacing: 1px;
-			text-transform: uppercase;
+    /*&:last-child {
+      border-left: 0;
+    }*/
+    a {
+      font-size: 12px;
+      font-weight: bolder;
+      line-height: $acces-nav-height;
 
-			color: white;
-			&:hover
-			{
-				background-color: $color-black-shade;
-			}
-		}
-	}
+      display: block;
+
+      height: $acces-nav-height;
+      padding: 0 1em;
+
+      text-decoration: none;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+
+      color: white;
+      &:hover {
+        background-color: $color-black-shade;
+      }
+    }
+  }
 }

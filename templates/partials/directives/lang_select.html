@@ -1,15 +1,18 @@
 {% load i18n %}
-{% if LANGUAGES|length > 1 %}
-    <form id="language_selector" class="" action="{% url 'set_language' %}" method="post">
-        {% csrf_token %}
-        <input name="next" type="hidden" value="{{ language_neutral_url_path }}" />
+<div class="LangSelect">
+    {% if LANGUAGES|length > 1 %}
+        <form id="language_selector" class="" action="{% url 'set_language' %}" method="post">
+            {% csrf_token %}
+            <input name="next" type="hidden" value="{{ language_neutral_url_path }}"/>
             <select name="language" class="LangSelect-sct">
                 {% get_language_info_list for LANGUAGES as languages %}
                 {% for language in languages %}
-                    <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE%} selected="selected"{% endif %}>
+                    <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %}
+                            selected="selected"{% endif %}>
                         {% if language.code == 'es' %} ES {% elif language.code == 'en' %} EN {% endif %}
                     </option>
                 {% endfor %}
             </select>
-    </form>
-{% endif %}
+        </form>
+    {% endif %}
+</div>

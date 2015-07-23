@@ -1,8 +1,8 @@
 {% load i18n %}
 <div class="Wishlist">
-	<a href="#" class="Wishlist-toggler">
-		<span class="Wishlist-icon">icon</span>
+    <a href="{{ wish_list.get_absolute_url }}" class="Wishlist-toggler">
+		<span class="Wishlist-icon"><i class="fa fa-heart-o fa-2x"></i></span>
 		<span class="Wishlist-label">{% trans "My wishlist" %}</span>
-		<span class="Wishlist-counter">{{ wish_list.lines.count }}</span>
+		<span class="Wishlist-counter">{% if wish_list %}{{ wish_list.lines.count }}{% else %} 0 {% endif %}</span>
 	</a>
 </div>
