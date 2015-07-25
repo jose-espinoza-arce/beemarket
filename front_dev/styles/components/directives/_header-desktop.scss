@@ -1,0 +1,14 @@
+.HeaderDesktop {
+	position: fixed;
+	left: 0;
+	right: 0;
+	width: 100%;
+	top: 0;
+	z-index: 10;
+}
+
+.page {
+	padding-top: 150px;
+	position: relative;
+	z-index: 1;
+}

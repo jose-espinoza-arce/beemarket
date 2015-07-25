@@ -11,6 +11,13 @@ body {
   height: $acces-nav-height;
 
   background-color: $color-black-base;
+  position: relative;
+  z-index: 3;
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
 
   @include e(right) {
     text-align: right;
@@ -19,6 +26,15 @@ body {
 
   @include e(item) {
     display: inline-block;
+    a {
+      &:hover,
+      &:active,
+      &:visited,
+      &:focus {
+        text-decoration: none;
+        color: white;
+      }
+    }
   }
 
 }

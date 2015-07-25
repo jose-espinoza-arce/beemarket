@@ -3,15 +3,12 @@
 
 {% load i18n %}
 
-<div class="dropdown Minibasket">
-    <a href="javascript:;" class="dropdown-toggle Minibasket-toggler">
-        <span class="Minibasket-icon"><i class="fa fa-shopping-cart fa-2x"></i></span>
-		<span class="Minibasket-label">{% trans "My basket" %}</span>
-		<span class="Minibasket-counter">{{ request.basket.lines.count }}</span>
+<div class="MiniBasket">
+    <a href="javascript:;" class="MiniBasket-toggler">
+      <span class="u-inlineBlock MiniBasket-icon"><i class="fa fa-shopping-cart fa-2x"></i></span>
+			<span class="u-inlineBlock MiniBasket-label">{% trans "My basket" %}</span>
+			<span class="u-inlineBlock MiniBasket-counter">{{ request.basket.lines.count }}</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-right" >
-        <li class="Minibasket-container" >{% include 'partials/directives/mini_basket_carousel.html' %}</li>
-    </ul>
 </div>
 
 

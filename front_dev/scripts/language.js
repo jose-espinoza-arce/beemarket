@@ -6,12 +6,12 @@
 * 
 **/
 
-var langSelect = (function ($) {
-	var ls = {
+var LangSelect = (function ($) {
+	var language = {
 		init: function(){
+			console.log('running language select');
 			this.cache();
 			this.bind();
-			return this;
 		},
 		cache: function(){
 			var form = $('#language_selector');
@@ -28,5 +28,5 @@ var langSelect = (function ($) {
 			});
 		}
 	};
-	return ls.init();
+	return language;
 })(jQuery);

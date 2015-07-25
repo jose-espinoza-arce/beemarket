@@ -129,6 +129,10 @@ dt {
   padding: 0;
   margin: 0; }
 
+.u-inlineBlock {
+  display: inline-block;
+  vertical-align: middle; }
+
 body {
   font-family: "Montserrat", sans-serif;
   font-smooth: never;
@@ -137,12 +141,19 @@ body {
 
 .AccessNav {
   height: 40px;
-  background-color: #1E1E1E; }
+  background-color: #1E1E1E;
+  position: relative;
+  z-index: 3; }
+  .AccessNav a:hover {
+    text-decoration: none; }
   .AccessNav-right {
     text-align: right;
     float: right; }
   .AccessNav-item {
     display: inline-block; }
+    .AccessNav-item a:hover, .AccessNav-item a:active, .AccessNav-item a:visited, .AccessNav-item a:focus {
+      text-decoration: none;
+      color: white; }
 
 .NavAccounts {
   float: left; }
@@ -163,6 +174,19 @@ body {
       color: white; }
       .NavAccounts li a:hover {
         background-color: #252526; }
+
+.HeaderDesktop {
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100%;
+  top: 0;
+  z-index: 10; }
+
+.page {
+  padding-top: 150px;
+  position: relative;
+  z-index: 1; }
 
 .LangSelect {
   border-right: 1px solid #4F4F52;
@@ -223,35 +247,11 @@ body {
     text-align: center;
     line-height: 24px; }
 
-.Minibasket {
+.MiniBasket {
   display: table-cell;
   border-left: 1px solid #4F4F52;
-  cursor: pointer;
-  /*  .btn-default {
-      font-size: 12px;
-      font-weight: bolder;
-      line-height: $acces-nav-height;
-  
-      display: block;
-  
-      height: $acces-nav-height;
-      padding: 0 1em;
-  
-      text-decoration: none;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-  
-      background-color: $color-black-base;
-  
-      border: none;
-      border-radius: 0;
-      color: white;
-      &:hover {
-        color: white;
-        background-color: $color-black-shade;
-      }
-    }*/ }
-  .Minibasket-toggler {
+  cursor: pointer; }
+  .MiniBasket-toggler {
     font-size: 12px;
     font-weight: bolder;
     line-height: 40px;
@@ -262,35 +262,40 @@ body {
     letter-spacing: 1px;
     text-transform: uppercase;
     color: white; }
-    .Minibasket-toggler:hover {
+    .MiniBasket-toggler:hover {
       background-color: #252526; }
-  .Minibasket-icon {
+  .MiniBasket-icon {
     width: 24px;
     height: 24px;
     color: #4F4F52;
-    display: inline-block;
-    vertical-align: middle;
     text-align: center;
     line-height: 24px;
     margin-right: 12px; }
-  .Minibasket-label {
+  .MiniBasket-label {
     margin-right: 12px; }
-  .Minibasket-counter {
+  .MiniBasket-counter {
     width: 24px;
     height: 24px;
     background-color: #d54e4c;
-    display: inline-block;
-    vertical-align: middle;
     text-align: center;
     line-height: 24px; }
-  .Minibasket-container {
-    width: 500px;
-    height: 300px; }
-  .Minibasket-item {
-    text-align: center; }
-    .Minibasket-item img {
-      width: 150px !important; }
+  .MiniBasket--full {
+    padding-top: 4em;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 250ms ease-in-out;
+    transform: translateY(-500px);
+    width: 100%;
+    background-color: #fff;
+    left: 0;
+    right: 0;
+    z-index: 2; }
+    .MiniBasket--full.isOpen {
+      transform: translateY(0);
+      visibility: visible;
+      opacity: 1; }
 
 .SiteNav {
   position: relative;
-  z-index: 90; }
+  z-index: 1; }

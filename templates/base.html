@@ -54,7 +54,9 @@
 
     <body id="{% block body_id %}default{% endblock %}" class="{% block body_class %}default{% endblock %}">
         {# Main content goes in this 'layout' block #}
-        {% block layout %}{% endblock %}
+        <div class="wrapper">
+            {% block layout %}{% endblock %}
+        </div>
 
         {% comment %}
         Scripts loaded from a CDN.  These can't be wrapped by the 'compress' tag and so we

@@ -1,27 +1,34 @@
 {% load currency_filters %}
 {% load i18n %}
-<div class="AccessNav">
-	<!-- Lang -->
-	<div class="AccessNav-item AccessNav-item--lang">
-			{% include "partials/directives/lang_select.html" %}
+
+<!-- MiniBasket -->
+{% include "partials/directives/mini_basket_carousel.html" %}
+<!-- /MiniBasket -->
+
+	<div class="AccessNav">
+		<div class="container">
+		<!-- Lang -->
+		<div class="AccessNav-item AccessNav-item--lang">
+				{% include "partials/directives/lang_select.html" %}
+		</div>
+	
+	    <div class="AccessNav-right">
+	        <!-- Accounts -->
+	        <div class="AccessNav-item AccessNav-item--accounts">
+	            {% include "partials/directives/nav_accounts.html" %}
+	        </div>
+	
+	        <!-- Whislist -->
+	        <div class="AccessNav-item AccessNav-item--whislist">
+	            {% include "partials/directives/wishlist.html" %}
+	        </div>
+	
+	        <!-- Mini Basket -->
+	        <div class="AccessNav-item AccessNav-item--minibasket" >
+	            {% include "partials/directives/mini_basket.html" %}
+	        </div>
+	    </div>
 	</div>
-
-    <div class="AccessNav-right">
-        <!-- Accounts -->
-        <div class="AccessNav-item AccessNav-item--accounts">
-            {% include "partials/directives/nav_accounts.html" %}
-        </div>
-
-        <!-- Whislist -->
-        <div class="AccessNav-item AccessNav-item--whislist">
-            {% include "partials/directives/wishlist.html" %}
-        </div>
-
-        <!-- Mini Basket -->
-        <div class="AccessNav-item AccessNav-item--minibasket" >
-            {% include "partials/directives/mini_basket.html" %}
-        </div>
-    </div>
 </div>
 
 

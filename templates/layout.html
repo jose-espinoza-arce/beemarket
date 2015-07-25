@@ -6,17 +6,14 @@
 {% block mainstyles %}
     {% block styles %}
         <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static "styles/bundle.css" %}">
         <link rel="stylesheet" href="{% static "styles/main.css" %}">
-
-        {# Vendor de fontawesome y boostrap #}
-        <link rel="stylesheet" href="{% static "styles/vendor.css" %}">
-
-        {# Estilos del slider para el minibasket #}
-        <link rel="stylesheet" href="{% static 'styles/libs/everslider/everslider.css' %}"/>
     {% endblock %}
 {% endblock %}
 
 {% block layout %}
+    
+    
     {# Newton Top Bar whit language, dashboard links, account, whislist, mini basket #}
     <header class="HeaderDesktop">
         {% include "partials/header_desktop.html" %}
@@ -64,12 +61,11 @@
 {# Local scripts #}
 {% block scripts %}
     {{ block.super }}
-    {% compress js %}
-    <!-- Twitter Bootstrap -->
-    <script type="text/javascript" src="{% static "oscar/js/bootstrap3/bootstrap.min.js" %}"></script>
+    {# {% compress js %} #}
+    <script src="{% static "scripts/bundle.js" %}"></script>
     <!-- Oscar -->
     <script src="{% static "oscar/js/oscar/ui.js" %}" type="text/javascript" charset="utf-8"></script>
-    {% endcompress %}
+    {# {% endcompress %} #}
 {% endblock %}
 
 {% block extrascripts %}
