@@ -147,7 +147,7 @@ build/Release
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 front_dev/node_modules
-
+front_dev/libs
 
 ### Bower ###
 front_dev/bower_components
