@@ -6,7 +6,9 @@
 {% load staticfiles %}
 
 
-<div id="basket-carousel" class="everslider">
+
+
+{% comment %}<div id="basket-carousel" class="everslider">
     <ul class="es-slides">
         {% if request.basket.num_lines %}
             {% for line in request.basket.all_lines %}
@@ -24,4 +26,4 @@
             <li><p>{% trans "Your basket is empty." %}</p></li>
         {% endif %}
     </ul>
-</div>
+</div>{% endcomment %}

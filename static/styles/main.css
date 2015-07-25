@@ -148,12 +148,8 @@ body {
   float: left; }
   .NavAccounts li {
     display: table-cell;
-    /*border-right: 1px solid $color-black-tint;*/
     border-left: 1px solid #4F4F52;
-    cursor: pointer;
-    /*&:last-child {
-      border-left: 0;
-    }*/ }
+    cursor: pointer; }
     .NavAccounts li a {
       font-size: 12px;
       font-weight: bolder;
