@@ -29,6 +29,9 @@ dd,
 dt {
   display: inline-block; }
 
+a:hover, a:focus, a:active {
+  text-decoration: none !important; }
+
 /* Icons */
 .u-largeSpinnerIcon {
   color: #999;
@@ -133,14 +136,21 @@ dt {
   display: inline-block;
   vertical-align: middle; }
 
+.u-left {
+  float: left; }
+
+.u-right {
+  float: right; }
+
 body {
   font-family: "Montserrat", sans-serif;
   font-smooth: never;
+  font-size: 16px;
   margin: 0;
   -webkit-font-smoothing: antialiased; }
 
 .AccessNav {
-  height: 40px;
+  /* height: $acces-nav-height; */
   background-color: #1E1E1E;
   position: relative;
   z-index: 3; }
@@ -150,7 +160,8 @@ body {
     text-align: right;
     float: right; }
   .AccessNav-item {
-    display: inline-block; }
+    display: block;
+    float: left; }
     .AccessNav-item a:hover, .AccessNav-item a:active, .AccessNav-item a:visited, .AccessNav-item a:focus {
       text-decoration: none;
       color: white; }
@@ -195,7 +206,8 @@ body {
     cursor: pointer;
     border: none;
     outline: none;
-    padding: 11px 1em 10px 1em;
+    padding: 0 1em;
+    height: 40px;
     background: none;
     color: white;
     text-transform: uppercase;
@@ -211,7 +223,7 @@ body {
       background-color: #252526; }
 
 .Wishlist {
-  display: table-cell;
+  display: block;
   border-left: 1px solid #4F4F52;
   cursor: pointer; }
   .Wishlist-toggler {
@@ -249,8 +261,8 @@ body {
 
 .MiniBasket {
   display: table-cell;
-  border-left: 1px solid #4F4F52;
-  cursor: pointer; }
+  cursor: pointer;
+  border-left: 1px solid #4F4F52; }
   .MiniBasket-toggler {
     font-size: 12px;
     font-weight: bolder;
@@ -265,40 +277,126 @@ body {
     .MiniBasket-toggler:hover {
       background-color: #252526; }
   .MiniBasket-icon {
+    line-height: 24px;
     width: 24px;
     height: 24px;
-    color: #4F4F52;
+    margin-right: 12px;
     text-align: center;
-    line-height: 24px;
-    margin-right: 12px; }
+    color: #4F4F52; }
   .MiniBasket-label {
     margin-right: 12px; }
   .MiniBasket-counter {
+    line-height: 24px;
     width: 24px;
     height: 24px;
-    background-color: #d54e4c;
     text-align: center;
-    line-height: 24px; }
+    background-color: #d54e4c; }
   .MiniBasket--full {
-    padding-top: 4em;
     position: absolute;
+    z-index: 2;
+    right: 0;
+    left: 0;
     visibility: hidden;
-    opacity: 0;
+    width: 100%;
+    padding-top: 4em;
     transition: all 250ms ease-in-out;
     transform: translateY(-500px);
-    width: 100%;
+    opacity: 0;
+    border-bottom: 1px solid #e6e6e6;
     background-color: #fff;
-    left: 0;
-    right: 0;
-    z-index: 2; }
+    box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.15); }
     .MiniBasket--full.isOpen {
-      transform: translateY(0);
       visibility: visible;
+      transform: translateY(0);
       opacity: 1; }
 
+.MiniBasketCarousel {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+  .MiniBasketCarousel-item:focus {
+    outline: none; }
+  .MiniBasketCarousel-card {
+    width: 224px;
+    margin: 0 1em;
+    padding: 1em;
+    border: 1px solid #e6e6e6;
+    background: #fff; }
+  .MiniBasketCarousel-fig {
+    display: block;
+    width: 192px;
+    height: 240px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 1em;
+    text-align: center; }
+    .MiniBasketCarousel-fig > a {
+      display: block;
+      overflow: hidden;
+      height: auto;
+      outline: none; }
+  .MiniBasketCarousel-img {
+    display: inline-block !important; }
+  .MiniBasketCarousel-header {
+    height: 64px;
+    padding: 1em 0;
+    text-align: center; }
+    .MiniBasketCarousel-header h2 {
+      font-size: 11px;
+      line-height: 14px;
+      margin: 0;
+      letter-spacing: 1px;
+      text-transform: uppercase; }
+    .MiniBasketCarousel-header a {
+      color: #1E1E1E; }
+      .MiniBasketCarousel-header a:hover {
+        color: #4F4F52; }
+  .MiniBasketCarousel-footer {
+    overflow: hidden;
+    height: auto;
+    text-align: center; }
+    .MiniBasketCarousel-footer span {
+      font-size: 12px;
+      display: inline-block;
+      vertical-align: middle;
+      color: #707277; }
+  .MiniBasketCarousel-qty {
+    padding-right: 1em; }
+  .MiniBasketCarousel-actions {
+    margin: 1em 0;
+    padding: 1em;
+    text-align: center;
+    background: #fff; }
+    .MiniBasketCarousel-actions .action {
+      display: inline-block;
+      margin: 0;
+      vertical-align: middle; }
+    .MiniBasketCarousel-actions .action-left {
+      margin-right: 1em; }
+    .MiniBasketCarousel-actions .action-right a {
+      display: inline-block;
+      margin: 0 .5em;
+      vertical-align: middle; }
+  .MiniBasketCarousel .slick-next,
+  .MiniBasketCarousel .slick-prev {
+    width: 32px;
+    height: 32px;
+    margin-top: -16px;
+    margin-left: -16px;
+    color: #1E1E1E;
+    border: 2px solid #1E1E1E;
+    background-color: #fff; }
+    .MiniBasketCarousel .slick-next:before,
+    .MiniBasketCarousel .slick-prev:before {
+      opacity: 1;
+      color: #1E1E1E; }
+  .MiniBasketCarousel .slick-next {
+    right: -48px; }
+  .MiniBasketCarousel .slick-prev {
+    left: -32px; }
+
 .SiteNav {
-  height: 120px;
-  padding-top: 1em;
+  padding: 2em 0;
   text-align: center;
   background-color: #333335;
   position: relative;

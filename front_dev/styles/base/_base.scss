@@ -8,3 +8,10 @@ dd,
 dt {
   display: inline-block;
 }
+a {
+	&:hover,
+	&:focus,
+	&:active {
+		text-decoration: none !important;
+	}
+}

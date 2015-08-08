@@ -7,25 +7,35 @@
 
 <section class="MiniBasket MiniBasket--full">
     <div class="container">
-        <div class="MiniBasket-carousel">
             <ul class="MiniBasketCarousel">
                 {% if request.basket.num_lines %}
                     {% for line in request.basket.all_lines %}
-                        <li class="Minibasket-item">
-                            <article>
+                        <li class="MiniBasketCarousel-item">
+                            <article class="MiniBasketCarousel-card">
                                 {% with image=line.product.primary_image %}
-                                    <figure>
-                                        {% thumbnail image.original "150" upscale=False as thumb %}
+                                    <figure class="MiniBasketCarousel-fig">
+                                    
+                                        
+                                    
+                                        {% thumbnail image.original "x208" upscale=True as thumb %}
                                         <a href="{{ line.product.get_absolute_url }}">
-                                            <img class="thumbnail" src="{{ thumb.url }}"
+                                            <img class="MiniBasketCarousel-img" src="{{ thumb.url }}"
                                                   alt="{{ line.product.get_title }}">
                                         </a>
                                         {% endthumbnail %}
-                                    </figure>
-                                    <h2><a href="{{ line.product.get_absolute_url }}">{{ line.product.get_title }}</a></h2>
-                                    <div class="col-sm-1 align-center"><strong>{% trans "Qty" %}</strong> {{ line.quantity }}</div>
-                                    <div class="col-sm-3 price_color align-right">{{ line.unit_price_excl_tax|currency:request.basket.currency }}</div>
-                                {% endwith %}
+
+                                   
+                                 </figure>
+                                 <header class="MiniBasketCarousel-header">
+                                     <h2><a href="{{ line.product.get_absolute_url }}">{{ line.product.get_title }}</a></h2>
+                                 </header>
+                                 <footer class="MiniBasketCarousel-footer">
+                                     <span class="MiniBasketCarousel-qty">{% trans "Qty" %}{{ line.quantity }}</span>
+                                     <span class="MiniBasketCarousel-price">{{ line.unit_price_excl_tax|currency:request.basket.currency }}</span>
+                                 </footer>
+                                   
+                                 {% endwith %}
+
                             </article>
                         </li>
                     {% endfor %}
@@ -33,18 +43,20 @@
                     <li><p>{% trans "Your basket is empty." %}</p></li>
                 {% endif %}
             </ul>
-            <div class="MiniBasket-actions">
-                <p class="align-right">
+            <div class="MiniBasketCarousel-actions">
+                <p class="action action-left">
                     {% if request.basket.is_tax_known %}
                         <small>{% trans "Total:" %} {{ request.basket.total_incl_tax|currency:request.basket.currency }}</small> 
                     {% else %}
                         <small>{% trans "Total:" %} {{ request.basket.total_excl_tax|currency:request.basket.currency }}</small> 
                     {% endif %}
                 </p>
-                <a href="{% url 'basket:summary' %}" class="btn btn-info btn-sm">{% trans "View basket" %}</a>
-                <a href="{% url 'checkout:index' %}" class="btn btn-primary btn-sm pull-right"><i class="icon-shopping-cart"></i> {% trans "Checkout" %}</a>
+                <div class="action action-right">
+                    <a href="{% url 'basket:summary' %}" class="btn btn-info btn-sm">{% trans "View basket" %}</a>
+                    <a href="{% url 'checkout:index' %}" class="btn btn-primary btn-sm pull-right"><i class="icon-shopping-cart"></i> {% trans "Checkout" %}</a>
+                </div>
+                
             </div>
-        </div>
     </div>          
 </section>
 

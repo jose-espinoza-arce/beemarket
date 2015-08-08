@@ -20,6 +20,7 @@ var MiniBasket = (function ($) {
           dots: true,
           centerMode: true,
           focusOnSelect: true,
+          variableWidth: true,
           responsive: [
              {
                breakpoint: 768,

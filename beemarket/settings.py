@@ -242,7 +242,7 @@ MESSAGE_TAGS = {
 HAYSTACK_CONNECTIONS = {
    'default': {
        'ENGINE': 'haystack.backends.solr_backend.SolrEngine',
-       'URL': u'http://127.0.0.1:8983/solr/',
+       'URL': u'http://192.168.1.4:8983/solr/',
        'INCLUDE_SPELLING': True,
        'EXCLUDED_INDEXES': ['search.search_indexes.CoreProductIndex']
    },

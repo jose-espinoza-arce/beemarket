@@ -1,6 +1,7 @@
 body {
   font-family: $font-base;
   font-smooth: never;
+  font-size: 16px;
 
   margin: 0;
 
@@ -8,7 +9,7 @@ body {
 }
 
 .AccessNav {
-  height: $acces-nav-height;
+  /* height: $acces-nav-height; */
 
   background-color: $color-black-base;
   position: relative;
@@ -25,7 +26,8 @@ body {
   }
 
   @include e(item) {
-    display: inline-block;
+    display: block;
+    float: left;
 
     a {
       &:hover,

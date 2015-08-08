@@ -1,10 +1,13 @@
-.MiniBasket {
+.MiniBasket
+{
   display: table-cell;
-  border-left: 1px solid $color-black-tint;
+
   cursor: pointer;
 
-  @include e(toggler) {
+  border-left: 1px solid $color-black-tint;
 
+  @include e(toggler)
+  {
     font-size: 12px;
     font-weight: bolder;
     line-height: $acces-nav-height;
@@ -19,49 +22,219 @@
     text-transform: uppercase;
 
     color: white;
-    &:hover {
+    &:hover
+    {
       background-color: $color-black-shade;
     }
   }
-  
-  @include e(icon) {
+  @include e(icon)
+  {
+    line-height: 24px;
+
     width: 24px;
     height: 24px;
+    margin-right: 12px;
+
+    text-align: center;
+
     color: $color-black-tint;
-    text-align: center;
+  }
+  @include e(label)
+  {
+    margin-right: 12px;
+  }
+  @include e(counter)
+  {
     line-height: 24px;
-    margin-right: 12px;
-  }
-  
-  @include e(label) {
-    margin-right: 12px;
-  }
 
-  @include e(counter) {
     width: 24px;
     height: 24px;
-    background-color: $color-basket-counter;
-    text-align: center;
-    line-height: 24px;
-  }
 
-  @include m('full') {
-    padding-top: 4em;
+    text-align: center;
+
+    background-color: $color-basket-counter;
+  }
+  @include m('full')
+  {
     position: absolute;
+    z-index: 2;
+    right: 0;
+    left: 0;
+
     visibility: hidden;
-    opacity: 0;
+
+    width: 100%;
+    padding-top: 4em;
+
     transition: all 250ms ease-in-out;
     transform: translateY(-500px);
-    width: 100%;
+
+    opacity: 0;
+    border-bottom: 1px solid darken(#fff, 10%);
     background-color: #fff;
-    left: 0;
-    right: 0;
-    z-index: 2;
-    &.isOpen {
-      transform : translateY(0);
+    box-shadow: 0 1px 1px 0px rgba(0,0,0,.15);
+    &.isOpen
+    {
       visibility: visible;
+
+      transform: translateY(0);
+
       opacity: 1;
     }
   }
-  
+}
+
+
+.MiniBasketCarousel
+{
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  @include e(item)
+  {
+    &:focus
+    {
+      outline: none;
+    }
+  }
+  @include e(card)
+  {
+    width: 224px;
+    margin: 0 1em;
+    padding: 1em;
+
+    border: 1px solid darken(#fff, 10%);
+    background: #fff;
+  }
+  @include e(fig)
+  {
+    display: block;
+
+    width: 192px;
+    height: 240px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 1em;
+
+    text-align: center;
+    > a
+    {
+      display: block;
+      overflow: hidden;
+
+      height: auto;
+
+      outline: none;
+    }
+  }
+  @include e(img)
+  {
+    display: inline-block !important;
+  }
+  @include e(header)
+  {
+    height: 64px;
+    padding: 1em 0;
+
+    text-align: center;
+    h2
+    {
+      font-size: 11px;
+      line-height: 14px;
+
+      margin: 0;
+
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    a
+    {
+      color: $color-black-base;
+      &:hover
+      {
+        color: $color-black-tint;
+      }
+    }
+  }
+  @include e(footer)
+  {
+    overflow: hidden;
+
+    height: auto;
+
+    text-align: center;
+    span
+    {
+      font-size: 12px;
+
+      display: inline-block;
+
+      vertical-align: middle;
+
+      color: $color-font-secondary;
+    }
+  }
+  @include e(qty)
+  {
+    padding-right: 1em;
+  }
+  @include e(actions)
+  {
+    margin: 1em 0;
+    padding: 1em;
+
+    text-align: center;
+
+    background: #fff;
+    .action
+    {
+      display: inline-block;
+
+      margin: 0;
+
+      vertical-align: middle;
+    }
+    .action-left
+    {
+      margin-right: 1em;
+    }
+    .action-right
+    {
+      a
+      {
+        display: inline-block;
+
+        margin: 0 .5em;
+
+        vertical-align: middle;
+      }
+    }
+  }
+  .slick-next,
+  .slick-prev
+  {
+    width: 32px;
+    height: 32px;
+    margin-top: -16px;
+    margin-left: -16px;
+
+    color: $color-black-base;
+    border: 2px solid $color-black-base;
+    background-color: #fff;
+    &:before
+    {
+      opacity: 1;
+      color: $color-black-base;
+    }
+  }
+  .slick-next
+  {
+    right: -48px;
+  }
+  .slick-prev
+  {
+    left: -32px;
+  }
 }
