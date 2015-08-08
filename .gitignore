@@ -60,6 +60,8 @@ logs/
 
 whoosh_index/
 
+solr/
+
 static/oscar
 
 ### OSX ###

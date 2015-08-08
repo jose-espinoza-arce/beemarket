@@ -1,4 +1,84 @@
 .SiteNav {
+  height: $site-nav-height;
+  padding-top: 1em;
+  text-align: center;
+  background-color: $color-black-shade2;
   position: relative;
   z-index: 1;
+  @include e(item) {
+    display: inline-block;
+    a {
+      &:hover,
+      &:active,
+      &:visited,
+      &:focus {
+        text-decoration: none;
+        color: white;
+      }
+    }
+
+    @include m('brand') {
+      float: left;
+    }
+
+    @include m('search') {
+      float: right;
+    }
+
+
+  }
+
+
 }
+
+
+.Brand {
+  a {
+    font-size: 18px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    line-height: $acces-nav-height;
+    height: $acces-nav-height;
+    letter-spacing: 1px;
+    }
+
+}
+
+.Menu {
+  li {
+    display: table-cell;
+    /*border-left: 1px solid $color-black-tint;*/
+    cursor: pointer;
+
+    a {
+      font-size: 12px;
+      font-weight: bolder;
+      line-height: $acces-nav-height;
+
+      display: inline-block;
+
+      height: $acces-nav-height;
+      margin: 0 3em 0 0;
+
+      text-decoration: none;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+
+      color: white;
+      &:hover {
+        background-color: $color-black-shade;
+      }
+    }
+  }
+  /*
+  @include e(all) {
+    border-right: 1px solid $color-black-tint;
+  }
+  
+  @include e(offers) {
+    border-left: 1px solid $color-black-tint;
+  }*/
+  
+  
+}
+

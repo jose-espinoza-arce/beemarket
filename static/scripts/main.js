@@ -37,6 +37,43 @@ var LangSelect = (function ($) {
 * Handles Carousel of minibasket.
 *
 **/
+var SearchForm = (function ($){
+    var search = {
+        init: function(){
+            this.cache();
+            this.bind();
+        },
+        cache: function(){
+            this.el = $('.Search--full')
+            this.toggler = $('.Search-toggler');
+        },
+        bind: function(){
+            var self = search;
+            this.toggler.on('click', function (e) {
+                e.preventDefault();
+                self.el.toggleClass('isOpen');
+                console.log($('.Search').has(e.target));
+            });
+
+            $('body').on('click', function (e) {
+                if (!$('.Search').is(e.target)
+                    && $('.Search').has(e.target).length === 0
+                    && $('.isOpen').has(e.target).length === 0
+                    ) {
+                    $('.Search--full').removeClass('isOpen');
+                }
+            });
+        }
+    };
+    return search;
+})(jQuery);
+/**
+*
+* Module carousel of minibasket
+* Author: Noe
+* Handles Carousel of minibasket.
+*
+**/
 var MiniBasket = (function ($) {
   var basket = {
     init: function(){
@@ -47,7 +84,7 @@ var MiniBasket = (function ($) {
       this.carousel = $('.MiniBasketCarousel');
       this.el = $('.MiniBasket--full');
       if (this.carousel.length>0) { this.carousel.slick( {
-          slidesToShow: 4,
+          slidesToShow: 3,
           slidesToScroll: 1,
           dots: true,
           centerMode: true,
@@ -82,6 +119,15 @@ var MiniBasket = (function ($) {
         e.preventDefault();
         self.el.toggleClass('isOpen');
       });
+      $('body').on('click', function (e) {
+        if (!$('.MiniBasket').is(e.target)
+            && $('.MiniBasket').has(e.target).length === 0
+            && $('.isOpen').has(e.target).length === 0
+           ) {
+                $('.MiniBasket--full').removeClass('isOpen');
+
+           }
+      });
     }
   };
   return basket;
@@ -93,7 +139,7 @@ var MiniBasket = (function ($) {
 
 
 (function ($, window) {
-	console.log('running main script');
 	MiniBasket.init();
 	LangSelect.init();
+    SearchForm.init();
 })(jQuery, window);

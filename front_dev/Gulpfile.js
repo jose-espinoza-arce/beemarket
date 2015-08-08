@@ -13,6 +13,7 @@ gulp.task('styles', function() {
 gulp.task('scripts', function() {
 	return gulp.src([
 			'scripts/language.js',
+            'scripts/search.js',
 			'scripts/minibasket.js',
 			'scripts/main.js'
 		])

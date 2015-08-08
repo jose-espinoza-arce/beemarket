@@ -89,7 +89,9 @@ INSTALLED_APPS = [
     'widget_tweaks',
 ]
 from oscar import get_core_apps
-INSTALLED_APPS = INSTALLED_APPS + get_core_apps(['dashboard', 'dashboard.promotions'])
+INSTALLED_APPS = INSTALLED_APPS + get_core_apps(['dashboard', 'dashboard.promotions', 'catalogue',
+                                                 'dashboard.catalogue', 'search', 'dashboard.partners',
+                                                 'partner', 'dashboard.orders'])
 
 MIDDLEWARE_CLASSES = (
     'debug_toolbar.middleware.DebugToolbarMiddleware',
@@ -228,22 +230,42 @@ MESSAGE_TAGS = {
 }
 
 # Haystack settings
-HAYSTACK_CONNECTIONS = {
-    'default': {
-        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
-        'PATH': location('whoosh_index'),
-    },
-}
+# HAYSTACK_CONNECTIONS = {
+#     'default': {
+#         'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+#         'PATH': location('whoosh_index'),
+#     },
+# }
 
 
 # Here's a sample Haystack config if using Solr (which is recommended)
-#HAYSTACK_CONNECTIONS = {
-#    'default': {
-#        'ENGINE': 'haystack.backends.solr_backend.SolrEngine',
-#        'URL': u'http://127.0.0.1:8983/solr/oscar_latest/',
-#        'INCLUDE_SPELLING': True
-#    },
-#}
+HAYSTACK_CONNECTIONS = {
+   'default': {
+       'ENGINE': 'haystack.backends.solr_backend.SolrEngine',
+       'URL': u'http://127.0.0.1:8983/solr/',
+       'INCLUDE_SPELLING': True,
+       'EXCLUDED_INDEXES': ['search.search_indexes.CoreProductIndex']
+   },
+}
+
+
+# Here's a sample Haystack config if using ElasticSearch
+# HAYSTACK_CONNECTIONS = {
+#     'default': {
+#         'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',
+#         'URL': 'http://127.0.0.1:9200/',
+#         'INDEX_NAME': 'haystack',
+#     },
+# }
+
+
+
+from collections import OrderedDict
+from django.utils.translation import ugettext_lazy as _
+# Search facets
+
+
+
 
 # =============
 # Debug Toolbar
@@ -269,11 +291,190 @@ DEBUG_TOOLBAR_PANELS = [
 ]
 INTERNAL_IPS = ['127.0.0.1', '::1']
 
+
+
+# ============
+# Phone number format
+# ============
+
+PHONENUMBER_DB_FORMAT = 'E164'
+
+
+
 # ==============
 # Oscar settings
 # ==============
 
+
+
+
 from oscar.defaults import *
+
+OSCAR_DASHBOARD_NAVIGATION = [
+    {
+        'label': _('Dashboard'),
+        'icon': 'icon-th-list',
+        'url_name': 'dashboard:index',
+    },
+    {
+        'label': _('Catalogue'),
+        'icon': 'icon-sitemap',
+        'children': [
+            {
+                'label': _('Products'),
+                'url_name': 'dashboard:catalogue-product-list',
+            },
+            {
+                'label': _('Product Types'),
+                'url_name': 'dashboard:catalogue-class-list',
+            },
+            {
+                'label': _('Categories'),
+                'url_name': 'dashboard:catalogue-category-list',
+            },
+            {
+                'label': _('Brands'),
+                'url_name': 'dashboard:catalogue-brand-list',
+            },
+            {
+                'label': _('Low stock alerts'),
+                'url_name': 'dashboard:stock-alert-list',
+            },
+        ]
+    },
+    {
+        'label': _('Fulfilment'),
+        'icon': 'icon-shopping-cart',
+        'children': [
+            {
+                'label': _('Orders'),
+                'url_name': 'dashboard:order-list',
+            },
+            {
+                'label': _('Partners'),
+                'url_name': 'dashboard:partner-list',
+            },
+            # The shipping method dashboard is disabled by default as it might
+            # be confusing. Weight-based shipping methods aren't hooked into
+            # the shipping repository by default (as it would make
+            # customising the repository slightly more difficult).
+            # {
+            #     'label': _('Shipping charges'),
+            #     'url_name': 'dashboard:shipping-method-list',
+            # },
+        ]
+    },
+    {
+        'label': _('Customers'),
+        'icon': 'icon-group',
+        'children': [
+            {
+                'label': _('Customers'),
+                'url_name': 'dashboard:users-index',
+            },
+            {
+                'label': _('Stock alert requests'),
+                'url_name': 'dashboard:user-alert-list',
+            },
+        ]
+    },
+    {
+        'label': _('Offers'),
+        'icon': 'icon-bullhorn',
+        'children': [
+            {
+                'label': _('Offers'),
+                'url_name': 'dashboard:offer-list',
+            },
+            {
+                'label': _('Ranges'),
+                'url_name': 'dashboard:range-list',
+            },
+            {
+                'label': _('Vouchers'),
+                'url_name': 'dashboard:voucher-list',
+            },
+        ],
+    },
+    {
+        'label': _('Content'),
+        'icon': 'icon-folder-close',
+        'children': [
+            {
+                'label': _('Content blocks'),
+                'url_name': 'dashboard:promotion-list',
+            },
+            {
+                'label': _('Content blocks by page'),
+                'url_name': 'dashboard:promotion-list-by-page',
+            },
+            {
+                'label': _('Pages'),
+                'url_name': 'dashboard:page-list',
+            },
+            {
+                'label': _('Email templates'),
+                'url_name': 'dashboard:comms-list',
+            },
+            {
+                'label': _('Reviews'),
+                'url_name': 'dashboard:reviews-list',
+            },
+        ]
+    },
+    {
+        'label': _('Reports and Statistics'),
+        'icon': 'icon-bar-chart',
+        'children': [
+            {
+              'label': _('Reports'),
+              'url_name': 'dashboard:reports-index',
+            },
+            {
+                'label': _('Statistics'),
+                'url_name': 'dashboard:order-stats',
+            },
+        ]
+    },
+]
+
+
+
+OSCAR_SEARCH_FACETS = {
+    'fields': OrderedDict([
+        # The key for these dicts will be used when passing facet data
+        # to the template. Same for the 'queries' dict below.
+        ('product_class', {'name': _('Type'), 'field': 'product_class'}),
+        ('category', {'name': _('Category'), 'field': 'category'}),
+        ('rating', {'name': _('Rating'), 'field': 'rating'}),
+        ('brand', {'name': _('Brand'), 'field': 'brand'}),
+        ('attribute', {'name': _('Attr'), 'field': 'attribute'}),
+        ('attributevalue', {'name': _('AttrValue'), 'field': 'attributevalue'}),
+        # You can specify an 'options' element that will be passed to the
+        # SearchQuerySet.facet() call.  It's hard to get 'missing' to work
+        # correctly though as of Solr's hilarious syntax for selecting
+        # items without a specific facet:
+        # http://wiki.apache.org/solr/SimpleFacetParameters#facet.method
+        # 'options': {'missing': 'true'}
+    ]),
+    'queries': OrderedDict([
+        ('price_range',
+         {
+             'name': _('Price range'),
+             'field': 'price',
+             'queries': [
+                 # This is a list of (name, query) tuples where the name will
+                 # be displayed on the front-end.
+                 (_('0 to 10'), u'[0 TO 10]'),
+                 (_('10 to 20'), u'[10 TO 20]'),
+                 (_('20 to 40'), u'[20 TO 40]'),
+                 (_('40 to 60'), u'[40 TO 60]'),
+                 (_('60+'), u'[60 TO *]'),
+             ]
+         }),
+    ]),
+}
+
 
 
 # Language code for this installation. All choices can be found here:
@@ -294,6 +495,7 @@ OSCAR_PROMOTION_POSITIONS = (('page', 'Page'),
 
 OSCAR_PRODUCTS_PER_PAGE = 12
 
+OSCAR_SHOP_NAME = 'Newton'
 OSCAR_SHOP_TAGLINE = 'Sandbox'
 
 OSCAR_RECENTLY_VIEWED_PRODUCTS = 12
@@ -322,12 +524,23 @@ OSCAR_ORDER_STATUS_PIPELINE = {
     'Complete': (),
 }
 
+
+# This dict defines the new line statuses than an order can move to
+OSCAR_LINE_STATUS_PIPELINE = {
+    'Pending': ('Being processed', 'Cancelled',),
+    'Being processed': ('Complete', 'Cancelled',),
+    'Cancelled': ('Reorder'),
+    'Complete': (),
+    'Reorder': ('Being processed', 'Cancelled',)
+}
+
+
 # This dict defines the line statuses that will be set when an order's status
 # is changed
 OSCAR_ORDER_STATUS_CASCADE = {
-    'Being processed': 'Being processed',
-    'Cancelled': 'Cancelled',
-    'Complete': 'Shipped',
+    'Being processed': _('Being processed'),
+    'Cancelled': _('Cancelled'),
+    'Complete': _('Shipped'),
 }
 
 # LESS/CSS/statics

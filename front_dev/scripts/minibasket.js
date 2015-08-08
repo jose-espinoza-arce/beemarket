@@ -1,7 +1,7 @@
 /**
 *
 * Module carousel of minibasket
-* Author: Jose
+* Author: Noe
 * Handles Carousel of minibasket.
 *
 **/
@@ -15,7 +15,7 @@ var MiniBasket = (function ($) {
       this.carousel = $('.MiniBasketCarousel');
       this.el = $('.MiniBasket--full');
       if (this.carousel.length>0) { this.carousel.slick( {
-          slidesToShow: 4,
+          slidesToShow: 3,
           slidesToScroll: 1,
           dots: true,
           centerMode: true,
@@ -49,6 +49,15 @@ var MiniBasket = (function ($) {
       this.toggler.on('click', function (e) {
         e.preventDefault();
         self.el.toggleClass('isOpen');
+      });
+      $('body').on('click', function (e) {
+        if (!$('.MiniBasket').is(e.target)
+            && $('.MiniBasket').has(e.target).length === 0
+            && $('.isOpen').has(e.target).length === 0
+           ) {
+                $('.MiniBasket--full').removeClass('isOpen');
+
+           }
       });
     }
   };

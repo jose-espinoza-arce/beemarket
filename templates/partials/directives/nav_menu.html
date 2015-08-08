@@ -1,0 +1,29 @@
+{% load category_tags %}
+{% load i18n %}
+
+<nav class="Menu">
+    <ul class="u-listUnstyled" >
+        {% category_tree depth=1 as tree_categories %}
+        <li class="Menu-all"><a tabindex="-1" href="{% url 'catalogue:index' %}">{% trans "Store" %}</a></li>
+        {% if tree_categories %}
+            <li class="divider"></li>
+            {% for tree_category, info in tree_categories %}
+                {% if info.has_children %}
+                    <li class="dropdown-submenu">
+                    <a tabindex="-1" href="{{ tree_category.get_absolute_url }}">{{ tree_category.name }}</a>
+                    <ul class="dropdown-menu">
+                {% else %}
+                    <li><a tabindex="-1" href="{{ tree_category.get_absolute_url }}">{{ tree_category.name }}</a></li>
+                {% endif %}
+
+            {% for close in info.num_to_close %}
+                </ul></li>
+            {% endfor %}
+            {% endfor %}
+        {% endif %}
+        <li class="divider"></li>
+        {% block nav_dropdown_extra_items %}
+            <li class="Menu-offers"><a href="{% url 'offer:list' %}">{% trans "Offers" %}</a></li>
+        {% endblock %}
+    </ul>
+</nav>

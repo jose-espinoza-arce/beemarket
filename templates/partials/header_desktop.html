@@ -5,49 +5,56 @@
 {% include "partials/directives/mini_basket_carousel.html" %}
 <!-- /MiniBasket -->
 
-	<div class="AccessNav">
-		<div class="container">
-		<!-- Lang -->
-		<div class="AccessNav-item AccessNav-item--lang">
-				{% include "partials/directives/lang_select.html" %}
-		</div>
-	
-	    <div class="AccessNav-right">
-	        <!-- Accounts -->
-	        <div class="AccessNav-item AccessNav-item--accounts">
-	            {% include "partials/directives/nav_accounts.html" %}
-	        </div>
-	
-	        <!-- Whislist -->
-	        <div class="AccessNav-item AccessNav-item--whislist">
-	            {% include "partials/directives/wishlist.html" %}
-	        </div>
-	
-	        <!-- Mini Basket -->
-	        <div class="AccessNav-item AccessNav-item--minibasket" >
-	            {% include "partials/directives/mini_basket.html" %}
-	        </div>
-	    </div>
-	</div>
+<!-- SearchForm -->
+{% include "partials/directives/search_form.html" %}
+<!-- /SearchForm -->
+
+<div class="AccessNav">
+    <div class="container">
+        <!-- Lang -->
+        <div class="AccessNav-item AccessNav-item--lang">
+            {% include "partials/directives/lang_select.html" %}
+        </div>
+
+        <div class="AccessNav-right">
+            <!-- Accounts -->
+            <div class="AccessNav-item AccessNav-item--accounts">
+                {% include "partials/directives/nav_accounts.html" %}
+            </div>
+
+            <!-- Whislist -->
+            <div class="AccessNav-item AccessNav-item--whislist">
+                {% include "partials/directives/wishlist.html" %}
+            </div>
+            {% with '/'|add:LANGUAGE_CODE|add:'/basket/' as basket_url %}
+                {% if request.path != basket_url %}
+                    <!-- Mini Basket -->
+                    <div class="AccessNav-item AccessNav-item--minibasket">
+                        {% include "partials/directives/mini_basket.html" %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+        </div>
+    </div>
 </div>
 
 
 <div class="SiteNav">
-	<!-- Brand -->
-	<div class="SiteNav-item SiteNav-item--brand">
-		<div class="Brand">
-			{% include "partials/brand.html" %}
-		</div>
-	</div>
-	
-	<!-- Main Menu -->
-	<div class="SiteNav-item SiteNav-item--menu">
-		<nav class="Menu">
-			{% block navigation %}
-			    {% include "partials/nav_primary.html" %}
-			{% endblock %}
-		</nav>
-	</div>
+    <div class="container">
+        <!-- Brand -->
+        <div class="SiteNav-item SiteNav-item--brand">
+                {% include "partials/directives/brand.html" %}
+        </div>
 
+        <!-- Main Menu -->
+        <div class="SiteNav-item SiteNav-item--menu">
+            {% include "partials/directives/nav_menu.html" %}
+        </div>
+
+        <!-- Search -->
+        <div class="SiteNav-item SiteNav-item--search">
+            {% include 'partials/directives/search.html' %}
+        </div>
+    </div>
 </div>
 

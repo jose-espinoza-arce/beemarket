@@ -73,6 +73,11 @@ msgstr "Iniciar sesión"
 msgid "My wishlist"
 msgstr "Mis deseos"
 
+#: templates/partials/directives/nav_menu.html:7
+msgid "Store"
+msgstr "Tienda"
+
+
 #: templates/partials/pagination.html:9
 msgid "previous"
 msgstr "anterior"
@@ -90,6 +95,331 @@ msgstr ""
 #: templates/partials/pagination.html:18
 msgid "next"
 msgstr "siguiente"
+
+
+msgid "Brand"
+msgstr "Marca"
+
+msgid "Brands"
+msgstr "Marcas"
+
+msgid "brands"
+msgstr "marcas"
+
+msgid "brand"
+msgstr "marca"
+
+msgid "Create new brand"
+msgstr "Crear nueva marca"
+
+msgid "Add a new brand"
+msgstr "Agrega una nueva marca"
+
+msgid "Update Brand '%s'"
+msgstr "Actualizar Marca '%s'"
+
+msgid "Brand updated successfully"
+msgstr "Marca actualizada correctamente"
+
+msgid "Brand created successfully"
+msgstr "Marca creada correctamente"
+
+msgid "Edit brand"
+msgstr "Editar marca"
+
+msgid "stock"
+msgstr "inventario"
+
+msgid "Stock"
+msgstr "Inventario"
+
+msgid "Ranges"
+msgstr "Grupos de productos en oferta"
+
+msgid "Partner"
+msgstr "Punto de venta"
+
+msgid "Partners"
+msgstr "Puntos de venta"
+
+msgid "Low stock alerts"
+msgstr "Alertas de inventario bajo"
+
+msgid "%i products are still assigned to this brand"
+msgstr "Aún está(n) asignado(s) %i producto(s) a esta marca"
+
+msgid "Please make sure no products are assigned to this brand before deletion."
+msgstr "Por favor asegúrese que ningún producto está asignado a esta marca."
+
+msgid "Delete brand?"
+msgstr "¿Eliminar marca?"
+
+msgid "All partners"
+msgstr "Todos los puntos de venta"
+
+msgid "Create new partner"
+msgstr "Crear nuevo punto de venta"
+
+
+msgid "Partners matching '%s'"
+msgstr "Punto de venta que coinciden con '%s'"
+
+msgid "Partner '%s' was created successfully."
+msgstr "El punto de venta '%s' fue creado exitosamente."
+
+msgid "Partner '%s' was updated successfully."
+msgstr "El punto de venta '%s' fue actualizado exitosamente."
+
+msgid "Partner '%s' was deleted successfully."
+msgstr "El punto de venta '%s' fue eliminado exitosamente."
+
+msgid "Track stock levels?"
+msgstr "¿Buscar niveles de inventario?"
+
+msgid "A parent product can't have stockrecords."
+msgstr "Un producto padre no puede tener registros de inventario."
+
+msgid "One can't add a child product to a product with stock records."
+msgstr "No es posible añadir productos hijos a un producto con registro de inventario."
+
+msgid "Your stock alert is now active"
+msgstr "La alerta de inventario ya esta activa "
+
+msgid "Your stock alert cannot be confirmed"
+msgstr "La alerta de inventario no se ha confirmado."
+
+msgid "Your stock alert has been cancelled"
+msgstr "La alerta de inventario se ha canceladada."
+
+msgid "Your stock alert cannot be cancelled"
+msgstr "La alerta de inventario no se ha cancelada."
+
+msgid "There is already an active stock alert for %s"
+msgstr "Ya existe una alerta de inventario activa para %s"
+
+msgid "You already have an active alert for this product"
+msgstr "Ya tienes una alerta para avisarle cuando haya inventario para este producto."
+
+msgid "Stock records"
+msgstr "Registros de inventario"
+
+msgid "Stock record"
+msgstr "Registro de inventario"
+
+
+msgid "Low Stock Threshold"
+msgstr "Regla de inventario mínimo"
+
+msgid "Invalid stock consumption request"
+msgstr "Petición de consumo de inventario inválida "
+
+msgid "Stock Record"
+msgstr "Registro de Inventario "
+
+msgid "Number in stock"
+msgstr "Cantidad en inventario "
+
+msgid "Stock alert"
+msgstr "Alerta de existencia"
+
+msgid "Stock alerts"
+msgstr "Alertas de existencia"
+
+msgid "In stock"
+msgstr "En existencia"
+
+msgid "In stock (%d available)"
+msgstr "En existencia (%d disponible)"
+
+msgid "no stock available"
+msgstr "no hay inventario"
+
+msgid "Stock alert requests"
+msgstr "Peticiones de alertas de existencia"
+
+msgid "Check for products that are back in stock and send out alerts"
+msgstr "Comprobar productos que están de vuelta en existencia y enviar alertas"
+
+msgid "You have an active stock alert for this product."
+msgstr "Tiene una alerta de existencia activa para este producto."
+
+msgid "You can get an email alert when this product is back in stock."
+msgstr "Usted puede ser avisado por correo electrónico cuando este producto "
+"vuelva a estar en existencia."
+
+msgid "You do not have any active alerts for out-of-stock products."
+msgstr "Usted no dispone de ninguna alerta de existencia activa."
+
+msgid ""
+"\n"
+"We are happy to inform you that our product '%(product)s' is back in stock:\n"
+"http://%(site)s%(path)s\n"
+msgstr ""
+"\n"
+"Nos complace informarle que nuestro producto '%(product)s' esta nuevamente "
+"en existencia: \n"
+"http://%(site)s%(path)s\n"
+
+msgid ""
+"\n"
+"Beware that the amount of items in stock is limited. Be quick or someone "
+"might get there first.\n"
+msgstr ""
+"\n"
+"Tenga presente que la cantidad de productos en existencia es limitada. "
+"Sea rápido o alguien mas puede comprar el producto primero que usted.\n"
+
+msgid ""
+"Hello,\n"
+"\n"
+"Somebody (hopefully you) has requested an email alert when\n"
+"'%(product)s' is back in stock.  Please click the following link\n"
+"to confirm:\n"
+"http://%(domain)s%(confirm_path)s\n"
+"\n"
+"You can cancel this alert at any time by clicking the following link:\n"
+"http://%(domain)s%(cancel_path)s\n"
+"\n"
+"Thanks for your interest,\n"
+"The %(site)s Team\n"
+msgstr ""
+"Hola,\n"
+"\n"
+"Alguien ha solicitado una notificación por correo electrónico cuando\n"
+"el producto '%(product)s' esté de vuelta en existencia. Por favor haga clic\n"
+"sobre el siguiente enlace para confirmar:\n"
+"http://%(domain)s%(confirm_path)s\n"
+"\n"
+"Si desea cancelar esta notificación haga clic sobre el siguiente enlace:\n"
+"http://%(domain)s%(cancel_path)s\n"
+"\n"
+"Gracias por su interés\n"
+"El equipo de %(site)s.\n"
+
+msgid "Confirmation required for stock alert"
+msgstr "Confirmación para activar alerta de existencia"
+
+msgid ""
+"\n"
+"<a href=\"%(url)s\">%(title)s</a> is back in stock\n"
+msgstr ""
+"\n"
+"<a href=\"%(url)s\">%(title)s</a> está nuevamente en existencia\n"
+
+msgid "%(title)s is back in stock"
+msgstr "Hay %(title)s nuevamente en existencia"
+
+msgid "Track stock?"
+msgstr "¿Manejar inventario?"
+
+msgid "Stock and pricing"
+msgstr "Inventario y precios"
+
+msgid "Num in stock"
+msgstr "Num. en existencia"
+
+msgid "Low stock threshold"
+msgstr "Regla de existencia mínima"
+
+msgid "This is likely because this product still has stock records."
+msgstr "Posiblemente porque este producto aún tiene registros de inventario."
+
+msgid "View Stock Alerts"
+msgstr "Ver alertas de existencia"
+
+msgid "Catalogue and stock"
+msgstr "Catálogo e inventario"
+
+msgid "Current available stock"
+msgstr "Existencia actual"
+
+msgid "<em>Open</em> stock alerts"
+msgstr "Alertas de existencia <em>activas</em>"
+
+msgid "<em>Closed</em> stock alerts"
+msgstr "Alertas de existencia <em>cerradas</em>"
+
+msgid "No stock alerts found."
+msgstr "No se han encontrado alertas de existencia."
+
+
+# search/search_index.py:15
+msgid "No brand"
+msgstr "Sin marca"
+
+
+msgid "Partner address"
+msgstr "Dirección del punto de venta"
+
+msgid "Partner addresses"
+msgstr "Direcciones del punto de venta"
+
+msgid "Partner SKU"
+msgstr "SKU del punto de venta"
+
+msgid "Partners dashboard"
+msgstr "Panel de puntos de venta"
+
+msgid "Partner name"
+msgstr "Nombre del punto de venta"
+
+msgid "Partner reference"
+msgstr "Referencia del punto de venta"
+
+msgid "This is the item number that the partner uses within their system"
+msgstr "Este es el número de artículo que utiliza el punto de venta dentro de su sistema"
+
+msgid "Partner Notes"
+msgstr "Notas del Punto de Venta"
+
+msgid "Fulfillment partner"
+msgstr "Punto de venta proveedor"
+
+msgid "Fulfillment partners"
+msgstr "Puntos de venta proveedores"
+
+msgid "Partner Reference"
+msgstr "Referencia de punto de venta"
+
+msgid "Partner details"
+msgstr "Detalles del punto de venta"
+
+msgid "Partner reference number"
+msgstr "Número referencia del punto de venta"
+
+msgid "Partner notes"
+msgstr "Notas del punto de venta"
+
+msgid "Delete partner"
+msgstr "Eliminar punto de venta"
+
+msgid "Are you sure you want to delete this partner?"
+msgstr "¿Está seguro de que desea eliminar este punto de venta?"
+
+msgid "Manage partner and users"
+msgstr "Gestionar puntos de venta y usuarios"
+
+msgid "No partners found."
+msgstr "No se encontró ningún punto de venta."
+
+
+msgid "Reports and Statistics"
+msgstr "Informes y Estadísticas"
+
+msgid "Unit Retail Price"
+msgstr "Precio al público por unidad"
+
+msgid "Price (retail)"
+msgstr "Precio (púbico)"
+
+msgid "Retail price"
+msgstr "Precio al público"
+
+msgid "Phone Number"
+msgstr "Teléfono"
+
+msgid "Enter a valid phone number including country code (ex. +999999999999)."
+msgstr "Introduzca un número telefónico válido, incluyendo el código del pais (ej. +999999999999)"
 
 #~ msgid "Mr"
 #~ msgstr "Sr."
@@ -231,14 +561,7 @@ msgstr "siguiente"
 #~ msgid "Billing addresses"
 #~ msgstr "Direcciones de factura"
 
-#~ msgid "Partner"
-#~ msgstr "Socio"
 
-#~ msgid "Partner address"
-#~ msgstr "Dirección del socio"
-
-#~ msgid "Partner addresses"
-#~ msgstr "Direcciones del socio"
 
 #~ msgid "Product"
 #~ msgstr "Producto"
@@ -543,8 +866,7 @@ msgstr "siguiente"
 #~ msgid "Requires shipping?"
 #~ msgstr "Requiere envío?"
 
-#~ msgid "Track stock levels?"
-#~ msgstr "Buscar niveles de stock?"
+
 
 #~ msgid "Options"
 #~ msgstr "Opciones"
@@ -686,15 +1008,12 @@ msgstr "siguiente"
 #~ msgid "A child product can't have options."
 #~ msgstr "Un producto hijo no puede tener opciones."
 
-#~ msgid "A parent product can't have stockrecords."
-#~ msgstr "Un producto padre no puede tener registros de stock."
+
 
 #~ msgid "The specified parent product is a child product."
 #~ msgstr "El producto padre especificado es un producto hijo."
 
-#~ msgid "One can't add a child product to a product with stock records."
-#~ msgstr ""
-#~ "No es posible añadir productos hijo a un producto con registros de stock."
+
 
 #~ msgid "Primary product"
 #~ msgstr "Producto Primario"
@@ -1174,17 +1493,7 @@ msgstr "siguiente"
 #~ msgid "A confirmation email has been sent to %s"
 #~ msgstr "Un email de confirmacion ha sido enviado a %s"
 
-#~ msgid "Your stock alert is now active"
-#~ msgstr "La alerta de stock ya esta activa "
 
-#~ msgid "Your stock alert cannot be confirmed"
-#~ msgstr "La alerta de stock no se ha confirmado."
-
-#~ msgid "Your stock alert has been cancelled"
-#~ msgstr "La alerta de stock se ha canceladada."
-
-#~ msgid "Your stock alert cannot be cancelled"
-#~ msgstr "La alerta de stock no se ha cancelada."
 
 #~ msgid "Customer"
 #~ msgstr "Cliente"
@@ -1266,12 +1575,7 @@ msgstr "siguiente"
 #~ msgid "Enter your email"
 #~ msgstr "Ingrese su email "
 
-#~ msgid "There is already an active stock alert for %s"
-#~ msgstr "Ya existe una alerta de stock activa para %s"
 
-#~ msgid "You already have an active alert for this product"
-#~ msgstr ""
-#~ "Ya tienes una alerta para avisarle cuando haya stock para este producto."
 
 #~ msgid "%(count)d notification archived"
 #~ msgid_plural "%(count)d notifications archived"
@@ -1425,8 +1729,7 @@ msgstr "siguiente"
 #~ msgid "Variants"
 #~ msgstr "Variantes"
 
-#~ msgid "Stock records"
-#~ msgstr "Registros de inventario"
+
 
 #~ msgid "Actions"
 #~ msgstr "Acciones"
@@ -1647,8 +1950,7 @@ msgstr "siguiente"
 #~ msgid "Product name"
 #~ msgstr "Nombre del producto "
 
-#~ msgid "Partner SKU"
-#~ msgstr "SKU del socio"
+
 
 #~ msgid "Date from"
 #~ msgstr "Fecha desde "
@@ -1818,8 +2120,7 @@ msgstr "siguiente"
 #~ msgid "Deleted page '%s'"
 #~ msgstr "Pagina eliminada '%s' "
 
-#~ msgid "Partners dashboard"
-#~ msgstr "Panel de socios"
+
 
 #~ msgctxt "Partner's name"
 #~ msgid "Name"
@@ -1837,23 +2138,6 @@ msgstr "siguiente"
 #~ msgid "Confirm Password"
 #~ msgstr "Confirmar contraseña "
 
-#~ msgid "All partners"
-#~ msgstr "Todos los socios"
-
-#~ msgid "Partners matching '%s'"
-#~ msgstr "Socios que coinciden con '%s'"
-
-#~ msgid "Create new partner"
-#~ msgstr "Crear un nuevo socio"
-
-#~ msgid "Partner '%s' was created successfully."
-#~ msgstr "Socio '%s' fue creado exitosamente."
-
-#~ msgid "Partner '%s' was updated successfully."
-#~ msgstr "Socio '%s' fue actualizado exitosamente."
-
-#~ msgid "Partner '%s' was deleted successfully."
-#~ msgstr "Socio '%s' fue eliminado exitosamente."
 
 #~ msgid "Create user"
 #~ msgstr "Crear usuario"
@@ -2085,11 +2369,11 @@ msgstr "siguiente"
 #~ msgid "Which products get a discount?"
 #~ msgstr "Que producto obtiene un descuento? "
 
-#~ msgid "Percentage off of products in range"
-#~ msgstr "Porciento de descuento de los productos en el grupo"
+msgid "Percentage off of products in range"
+msgstr "Porciento de descuento de los productos en el grupo"
 
-#~ msgid "Fixed amount off of products in range"
-#~ msgstr "Monto fijo de descuento de los productos en el grupo"
+msgid "Fixed amount off of products in range"
+msgstr "Monto fijo de descuento de los productos en el grupo"
 
 #~ msgid "Discount is a percentage off of the shipping cost"
 #~ msgstr "El descuento es un porcentaje del total del coste de envío."
@@ -2267,8 +2551,8 @@ msgstr "siguiente"
 #~ msgid "Limited to a cost of %(max)s"
 #~ msgstr "Límite al coste de %(max)s"
 
-#~ msgid "Range"
-#~ msgstr "Rango"
+msgid "Range"
+msgstr "Grupo de productos en oferta"
 
 #~ msgid "Discount is a percentage off of the product's value"
 #~ msgstr "El descuento es un porcentaje del producto"
@@ -2285,12 +2569,12 @@ msgstr "siguiente"
 #~ msgid "Max Affected Items"
 #~ msgstr "Máximo de artículos afectados"
 
-#~ msgid ""
-#~ "Set this to prevent the discount consuming all items within the range "
-#~ "that are in the basket."
-#~ msgstr ""
-#~ "Establezca esta opción para evitar el consumo de descuento de todos los "
-#~ "artículos dentro del mismo rango que se encuentran en el carrito."
+msgid ""
+"Set this to prevent the discount consuming all items within the range "
+"that are in the basket."
+msgstr ""
+"Establezca esta opción para evitar el consumo de descuento de todos los "
+"artículos dentro del mismo grupo que se encuentran en el carrito."
 
 #~ msgid "Custom class"
 #~ msgstr "Clase personalizada "
@@ -2298,8 +2582,8 @@ msgstr "siguiente"
 #~ msgid "Benefits"
 #~ msgstr "Reglas"
 
-#~ msgid "Multibuy benefits require a product range"
-#~ msgstr "Reglas multicompra requieren un rango producto  "
+msgid "Multibuy benefits require a product range"
+msgstr "Reglas multicompra requieren un grupo de productos  "
 
 #~ msgid "Multibuy benefits don't require a value"
 #~ msgstr "Reglas multicompra no requieren un valor "
@@ -2309,8 +2593,8 @@ msgstr "siguiente"
 #~ "Reglas multicompra no requieren un atributo de 'máximo de artículos "
 #~ "afectados' "
 
-#~ msgid "Percentage benefits require a product range"
-#~ msgstr "Reglas de porcentaje requiere un rango de producto "
+msgid "Percentage benefits require a product range"
+msgstr "Reglas de porcentaje requiere un grupo de productos"
 
 #~ msgid "Percentage discount cannot be greater than 100"
 #~ msgstr "Descuento de porcentaje no puede ser mayor que 100 "
@@ -2318,33 +2602,33 @@ msgstr "siguiente"
 #~ msgid "A discount value is required"
 #~ msgstr "Un valor de descuento es requerido "
 
-#~ msgid ""
-#~ "No range should be selected as this benefit does not apply to products"
-#~ msgstr ""
-#~ "Ningún rango debe ser seleccionado ya que esta regla no se aplica a "
-#~ "productos "
+msgid ""
+"No range should be selected as this benefit does not apply to products"
+msgstr ""
+"Ningún grupo de productos debe ser seleccionado ya que esta regla no se aplica a "
+"productos "
 
 #~ msgid "Shipping discounts don't require a 'max affected items' attribute"
 #~ msgstr ""
 #~ "Descuentos de envío no requieren un atributo de 'máximo de artículos "
 #~ "afectados' "
 
-#~ msgid ""
-#~ "No range should be selected as the condition range will be used instead."
-#~ msgstr ""
-#~ "Ningún rango debe ser seleccionado ya que el rango de condición será "
-#~ "utilizado en este caso."
+msgid ""
+"No range should be selected as the condition range will be used instead."
+msgstr ""
+"Ningún grupo de productos debe ser seleccionado para este tipo de oferta "
 
-#~ msgid "Fixed discount benefits require a product range"
-#~ msgstr "Los beneficios de descuento fijo requieren una gama de productos"
+
+msgid "Fixed discount benefits require a product range"
+msgstr "Los beneficios de descuento fijo requieren un grupo de productos"
 
 #~ msgid "Fixed discount benefits require a value"
 #~ msgstr "Los beneficios de descuento fijo requieren un valor"
 
-#~ msgid "Depends on number of items in basket that are in condition range"
-#~ msgstr ""
-#~ "Depende del número de artículos en el carrito que están en rango de "
-#~ "condición. "
+msgid "Depends on number of items in basket that are in condition range"
+msgstr ""
+"Depende del número de artículos en el carrito que están en rango de "
+"condición. "
 
 #~ msgid "Depends on value of items in basket that are in condition range"
 #~ msgstr ""
@@ -2376,9 +2660,6 @@ msgstr "siguiente"
 
 #~ msgid "Included Categories"
 #~ msgstr "Categorias Incluidas "
-
-#~ msgid "Ranges"
-#~ msgstr "Rangos"
 
 #~ msgid "File Path"
 #~ msgstr "Camino de archivo "
@@ -2583,21 +2864,8 @@ msgstr "siguiente"
 #~ msgid "'%(type)s' event for order #%(number)s"
 #~ msgstr "Evento: '%(type)s' para la orden de compra: #%(number)s"
 
-#~ msgid "Partner name"
-#~ msgstr "Nombre del socio"
 
-#~ msgid "Partner reference"
-#~ msgstr "Referencia del socio"
 
-#~ msgid "This is the item number that the partner uses within their system"
-#~ msgstr ""
-#~ "Este es el número de artículo que utiliza el socio dentro de su sistema"
-
-#~ msgid "Partner Notes"
-#~ msgstr "Notas del socio"
-
-#~ msgid "Stock record"
-#~ msgstr "Registro de inventario"
 
 #~ msgid "Price (inc. tax)"
 #~ msgstr "Precio (inc. impuesto)"
@@ -2620,8 +2888,7 @@ msgstr "siguiente"
 #~ msgid "Unit Price (excl. tax)"
 #~ msgstr "Precio unitario (excl. impuesto)"
 
-#~ msgid "Unit Retail Price"
-#~ msgstr "Precio unidad minorista"
+
 
 #~ msgid "Estimated Dispatch Date"
 #~ msgstr "Fecha envío prevista"
@@ -2768,32 +3035,19 @@ msgstr "siguiente"
 #~ msgid "There is already an order with number %s"
 #~ msgstr "Ya existe un pedido con número %s"
 
-#~ msgid "Fulfillment partner"
-#~ msgstr "Socio proveedor"
 
-#~ msgid "Fulfillment partners"
-#~ msgstr "Socios proveedores"
 
-#~ msgid "Price (retail)"
-#~ msgstr "Precio (minorista) "
+
 
 #~ msgid "Cost Price"
 #~ msgstr "Precio coste "
 
-#~ msgid "Number in stock"
-#~ msgstr "Número de stock "
+
 
 #~ msgid "Number allocated"
 #~ msgstr "Número asignado"
 
-#~ msgid "Low Stock Threshold"
-#~ msgstr "Regla stock mínimo"
 
-#~ msgid "Invalid stock consumption request"
-#~ msgstr "Pedido invalido de consumicion de stock "
-
-#~ msgid "Stock Record"
-#~ msgstr "Registro de Stock "
 
 #~ msgid "Threshold"
 #~ msgstr "Umbral"
@@ -2807,11 +3061,7 @@ msgstr "siguiente"
 #~ msgid "<stockalert for \"%(stock)s\" status %(status)s>"
 #~ msgstr "<stockalert for \"%(stock)s\" status %(status)s>"
 
-#~ msgid "Stock alert"
-#~ msgstr "Alerta de stock"
 
-#~ msgid "Stock alerts"
-#~ msgstr "Alertas stock"
 
 #~ msgid "unavailable"
 #~ msgstr "no disponible"
@@ -2822,17 +3072,12 @@ msgstr "siguiente"
 #~ msgid "Available"
 #~ msgstr "Disponible"
 
-#~ msgid "no stock available"
-#~ msgstr "no hay stock"
+
 
 #~ msgid "a maximum of %(max)d can be bought"
 #~ msgstr "se puede comprar un máximo de %(max)d"
 
-#~ msgid "In stock"
-#~ msgstr "En existencia"
 
-#~ msgid "In stock (%d available)"
-#~ msgstr "En stock (%d disponible)"
 
 #~ msgid "No file path supplied"
 #~ msgstr "Sin dirección de archivo suministrada"
@@ -2898,8 +3143,7 @@ msgstr "siguiente"
 #~ msgid "Expiry Date"
 #~ msgstr "Fecha de expiración"
 
-#~ msgid "Partner Reference"
-#~ msgstr "Referencia de socio"
+
 
 #~ msgid "%(card_type)s %(number)s (Expires: %(expiry)s)"
 #~ msgstr "%(card_type)s %(number)s (Expira: %(expiry)s)"
@@ -3287,8 +3531,6 @@ msgstr "siguiente"
 #~ msgid "Please choose a less common password"
 #~ msgstr "Elija una contraseña menos común "
 
-#~ msgid "Low stock alerts"
-#~ msgstr "Alertas de stock bajo"
 
 #~ msgid "Fulfilment"
 #~ msgstr "Seguimiento"
@@ -3296,14 +3538,10 @@ msgstr "siguiente"
 #~ msgid "Statistics"
 #~ msgstr "Estadísticas"
 
-#~ msgid "Partners"
-#~ msgstr "Socios"
-
 #~ msgid "Customers"
 #~ msgstr "Clientes"
 
-#~ msgid "Stock alert requests"
-#~ msgstr "Pedidos por alerta de stock"
+
 
 #~ msgid "Content"
 #~ msgstr "Contenido"
@@ -3338,9 +3576,7 @@ msgstr "siguiente"
 #~ msgid "60+"
 #~ msgstr "60+"
 
-#~ msgid "Check for products that are back in stock and send out alerts"
-#~ msgstr ""
-#~ "Comprobar productos que hay nuevamente en existencia y enviar alertas"
+
 
 #~ msgid "Permission denied!"
 #~ msgstr "Permiso denegado!"
@@ -3633,14 +3869,7 @@ msgstr "siguiente"
 #~ msgid "Add to basket"
 #~ msgstr "Añadir al carrito"
 
-#~ msgid "You have an active stock alert for this product."
-#~ msgstr ""
-#~ "Ya tienes una alerta para avisarle cuando haya stock para este producto."
 
-#~ msgid "You can get an email alert when this product is back in stock."
-#~ msgstr ""
-#~ "Usted puede ser avisado por correo electrónico cuando este producto "
-#~ "vuelva a estar disponible."
 
 #~ msgid "Submitting..."
 #~ msgstr "Enviando ..."
@@ -3994,10 +4223,7 @@ msgstr "siguiente"
 #~ msgid "There are no addresses in your address book."
 #~ msgstr "No hay direcciones en su cuenta."
 
-#~ msgid "You do not have any active alerts for out-of-stock products."
-#~ msgstr ""
-#~ "No dispone de ninguna alerta activa para cuando hay stock de los "
-#~ "productos."
+
 
 #~ msgid "Cancel"
 #~ msgstr "Cancelar"
@@ -4008,25 +4234,9 @@ msgstr "siguiente"
 #~ msgid "Hello,"
 #~ msgstr "Hola,"
 
-#~ msgid ""
-#~ "\n"
-#~ "We are happy to inform you that our product '%(product)s' is back in "
-#~ "stock:\n"
-#~ "http://%(site)s%(path)s\n"
-#~ msgstr ""
-#~ "\n"
-#~ "Nos complace informar que nuestro producto '%(product)s' esta nuevamente "
-#~ "en existencia: \n"
-#~ "http://%(site)s%(path)s\n"
 
-#~ msgid ""
-#~ "\n"
-#~ "Beware that the amount of items in stock is limited. Be quick or someone "
-#~ "might get there first.\n"
-#~ msgstr ""
-#~ "\n"
-#~ "Tenga presente que la cantidad de productos en existencia es limitada. "
-#~ "Sea rápido o alquilen puede comprar el producto primero que usted.\n"
+
+
 
 #~ msgid ""
 #~ "\n"
@@ -4044,44 +4254,6 @@ msgstr "siguiente"
 #~ "Gracias por su interés\n"
 #~ "El equipo %(site_name)s\n"
 
-#~ msgid "%(title)s is back in stock"
-#~ msgstr "Hay %(title)s nuevamente en existencia"
-
-#~ msgid ""
-#~ "Hello,\n"
-#~ "\n"
-#~ "Somebody (hopefully you) has requested an email alert when\n"
-#~ "'%(product)s' is back in stock.  Please click the following link\n"
-#~ "to confirm:\n"
-#~ "http://%(domain)s%(confirm_path)s\n"
-#~ "\n"
-#~ "You can cancel this alert at any time by clicking the following link:\n"
-#~ "http://%(domain)s%(cancel_path)s\n"
-#~ "\n"
-#~ "Thanks for your interest,\n"
-#~ "The %(site)s Team\n"
-#~ msgstr ""
-#~ "Hola,\n"
-#~ "\n"
-#~ "Alguien ha solicitado una comunicación por correo electrónico cuando\n"
-#~ "el producto '%(product)s' disponga de stock. Puede seguir el producto a:\n"
-#~ "http://%(domain)s%(confirm_path)s\n"
-#~ "\n"
-#~ "Si desea cancelar esta notificación puede hacerlo a:\n"
-#~ "http://%(domain)s%(cancel_path)s\n"
-#~ "\n"
-#~ "Gracias por su interés\n"
-#~ "El equipo de %(site)s.\n"
-
-#~ msgid "Confirmation required for stock alert"
-#~ msgstr "Se requiere confirmación para alerta de stock"
-
-#~ msgid ""
-#~ "\n"
-#~ "<a href=\"%(url)s\">%(title)s</a> is back in stock\n"
-#~ msgstr ""
-#~ "\n"
-#~ "<a href=\"%(url)s\">%(title)s</a> está nuevamente en existencia\n"
 
 #~ msgid "Order #%(number)s"
 #~ msgstr "Pedido #%(number)s"
@@ -4587,8 +4759,7 @@ msgstr "siguiente"
 #~ msgid "Requires shipping"
 #~ msgstr "Requiere envío"
 
-#~ msgid "Track stock?"
-#~ msgstr "¿Seguir stock?"
+
 
 #~ msgid "Edit product type"
 #~ msgstr "Editar tipo de producto"
@@ -4648,8 +4819,7 @@ msgstr "siguiente"
 #~ msgid "Images"
 #~ msgstr "Imágenes"
 
-#~ msgid "Stock and pricing"
-#~ msgstr "Stock y precios"
+
 
 #~ msgid "Upselling"
 #~ msgstr "Upselling"
@@ -4663,14 +4833,12 @@ msgstr "siguiente"
 #~ msgid "SKU"
 #~ msgstr "SKU"
 
-#~ msgid "Num in stock"
-#~ msgstr "Num. en stock"
+
 
 #~ msgid "Num allocated"
 #~ msgstr "Num. asignados"
 
-#~ msgid "Low stock threshold"
-#~ msgstr "Regla stock mínimo"
+
 
 #~ msgid "Cost price"
 #~ msgstr "Precio de costo"
@@ -4678,8 +4846,7 @@ msgstr "siguiente"
 #~ msgid "Price (excl tax)"
 #~ msgstr "Precio (excl. impuestos)"
 
-#~ msgid "Retail price"
-#~ msgstr "Precio minorista"
+
 
 #~ msgid "Add variant"
 #~ msgstr "Añadir variante"
@@ -4690,8 +4857,7 @@ msgstr "siguiente"
 #~ msgid "One can't add variants to this product at this point."
 #~ msgstr "No es posible añadir variantes a este producto en este momento."
 
-#~ msgid "This is likely because this product still has stock records."
-#~ msgstr "Posiblemente porque este producto no tiene registros de stock aún."
+
 
 #~ msgid "Save and add another variant"
 #~ msgstr "Guardar y añadir nueva variante"
@@ -4702,14 +4868,12 @@ msgstr "siguiente"
 #~ msgid "All"
 #~ msgstr "Todo"
 
-#~ msgid "Current available stock"
-#~ msgstr "Stock actual disponible"
+
 
 #~ msgid "Date alert raised"
 #~ msgstr "Fecha alerta levantada"
 
-#~ msgid "No stock alerts found."
-#~ msgstr "No se han encontrado alertas de stock."
+
 
 #~ msgid "Preview"
 #~ msgstr "Vista previa"
@@ -4805,20 +4969,12 @@ msgstr "siguiente"
 #~ msgid "New customers"
 #~ msgstr "Nuevos clientes"
 
-#~ msgid "View Stock Alerts"
-#~ msgstr "Ver alertas de stock"
 
-#~ msgid "Catalogue and stock"
-#~ msgstr "Catálogo y stock"
 
 #~ msgid "Total products"
 #~ msgstr "Total productos"
 
-#~ msgid "<em>Open</em> stock alerts"
-#~ msgstr "Alertas de stock <em>abiertas</em>"
 
-#~ msgid "<em>Closed</em> stock alerts"
-#~ msgstr "Alertas de stock <em>cerradas</em>"
 
 #~ msgid "Offers, vouchers and promotions"
 #~ msgstr "Pedidos, cupones y promociones"
@@ -4983,17 +5139,12 @@ msgstr "siguiente"
 #~ msgid "Product Options"
 #~ msgstr "Opciones de Producto"
 
-#~ msgid "Partner details"
-#~ msgstr "Detalles del socio"
+
 
 #~ msgid "Shipping details"
 #~ msgstr "Detalles de envío"
 
-#~ msgid "Partner reference number"
-#~ msgstr "Número referencia del socio"
 
-#~ msgid "Partner notes"
-#~ msgstr "Notas del socio"
 
 #~ msgid "Estimate dispatch date"
 #~ msgstr "Fecha envío prevista"
@@ -5255,11 +5406,7 @@ msgstr "siguiente"
 #~ msgid "Undo"
 #~ msgstr "Deshacer"
 
-#~ msgid "Delete partner"
-#~ msgstr "Eliminar socio"
 
-#~ msgid "Are you sure you want to delete this partner?"
-#~ msgstr "¿Está seguro de que desea eliminar este socio?"
 
 #~ msgid "Edit the user's details"
 #~ msgstr "Editar los detalles del usuario"
@@ -5270,8 +5417,7 @@ msgstr "siguiente"
 #~ msgid "No address associated."
 #~ msgstr "No hay dirección asociada."
 
-#~ msgid "Manage partner and users"
-#~ msgstr "Gestionar socios y usuarios"
+
 
 #~ msgid "Link an existing user"
 #~ msgstr "Vincular un usuario existente"
@@ -5279,8 +5425,7 @@ msgstr "siguiente"
 #~ msgid "Link a new user"
 #~ msgstr "Vincular un usuario nuevo"
 
-#~ msgid "No partners found."
-#~ msgstr "No se encontró ningún socio."
+
 
 #~ msgid "Unlinking..."
 #~ msgstr "Desligando..."

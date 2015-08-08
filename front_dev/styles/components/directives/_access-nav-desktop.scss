@@ -26,6 +26,7 @@ body {
 
   @include e(item) {
     display: inline-block;
+
     a {
       &:hover,
       &:active,

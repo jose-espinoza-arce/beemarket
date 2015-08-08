@@ -1,0 +1,13 @@
+{% load widget_tweaks %}
+{% load i18n %}
+<section class="Search Search--full">
+    <div class="container">
+        <form method="get" action="{% url 'search:search' %}" class="">
+            <span class="u-inlineBlock Search-fullicon"></span>
+            {% render_field search_form.q class="Search-field" placeholder=""%}
+            <span class="u-inlineBlock Search-closeicon"></span>
+
+            {% comment %}<input type="submit" value="" class="btn btn-default"/>{% endcomment %}
+        </form>
+    </div>
+</section>
