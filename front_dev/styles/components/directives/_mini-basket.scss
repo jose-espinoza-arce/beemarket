@@ -61,25 +61,22 @@
     right: 0;
     left: 0;
 
-    visibility: hidden;
+    display: none;
 
     width: 100%;
-    padding-top: 4em;
+    padding-top: 1em;
 
     transition: all 250ms ease-in-out;
     transform: translateY(-500px);
 
-    opacity: 0;
     border-bottom: 1px solid darken(#fff, 10%);
     background-color: #fff;
     box-shadow: 0 1px 1px 0px rgba(0,0,0,.15);
     &.isOpen
     {
-      visibility: visible;
+      display: block;
 
-      transform: translateY(0);
-
-      opacity: 1;
+      transform: translateY(40px);
     }
   }
 }

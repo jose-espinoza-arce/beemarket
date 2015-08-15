@@ -7,30 +7,37 @@
     display: inline-block;
 
     height: $acces-nav-height;
-    padding: 0 1em;
 
     text-decoration: none;
     letter-spacing: 1px;
     text-transform: uppercase;
 
     color: white;
-    &:hover {
-      background-color: $color-black-shade;
-    }
   }
 
   @include e(icon) {
-    width: 35px;
-    height: 35px;
-    /*background-color: white;*/
+    width: 32px;
+    height: 32px;
+    position: relative;
+    &:after {
+      position: absolute;
+      content: "";
+      display: block;
+      background: url('../images/search-icon-white.svg') no-repeat;
+      background-size: cover;
+      width: 16px;
+      height: 16px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
     border: 2px solid white;
   }
 
   @include m(full) {
-    padding-top: 4em;
+    padding: 0.75em 0;
     position: absolute;
-    visibility: hidden;
-    opacity: 0;
+    display: none;
     transition: all 250ms ease-in-out;
     transform: translateY(-500px);
     width: 100%;
@@ -39,9 +46,11 @@
     right: 0;
     z-index: 2;
     &.isOpen {
-      transform : translateY(0);
+   /*    transform : translateY(0);
       visibility: visible;
-      opacity: 1;
+      opacity: 1; */
+      display: block;
+      transform : translateY(40px);
     }
     form {
       position: relative;
@@ -50,36 +59,71 @@
 
   }
 
-  @include e(fullicon) {
-    z-index: 2 ;
-      width: 35px;
-      height: 35px;
-      position: absolute;
-      float: left;
-      background: #000;
-    }
+  @include e(inner) {
+    position: relative;
+  }
+
 
   @include e(closeicon) {
-
+    display: block;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    border: 2px solid $color-black-base;
+    background: #fff;
+    top: 0.75em;
+    right: 0;
     z-index: 2;
-    width: 35px;
-      height: 35px;
+    cursor: pointer;
+    &:after {
       position: absolute;
-      float: right;
-      background: #000;
+      content: "";
+      display: block;
+      background: url('../images/close-icon.svg') no-repeat;
+      background-size: cover;
+      width: 16px;
+      height: 16px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
     }
+     
+  }
   
   @include e(field) {
+    display: block;
     z-index: 1;
     position: relative;
     width: 100%;
-    height: 100%;
-    /*margin: 16px 16px 16px 48px;*/
-    padding: 0 2em;
-    background: none;
+    padding: 1em 1em 1em 3em;
+    background: white;
+    outline: none;
     border: none;
-    font-size: 30px;
+    font-size: 16px;
+  }
 
+  @include e(submit) {
+    display: block;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    border: 2px solid transparent;
+    background: #fff;
+    top: 0.75em;
+    left: 0;
+    z-index: 2;
+    &:after {
+      position: absolute;
+      content: "";
+      display: block;
+      background: url('../images/search-icon.svg') no-repeat;
+      background-size: cover;
+      width: 16px;
+      height: 16px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
   }
 
 }

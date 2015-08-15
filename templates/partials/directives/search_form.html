@@ -3,11 +3,13 @@
 <section class="Search Search--full">
     <div class="container">
         <form method="get" action="{% url 'search:search' %}" class="">
-            <span class="u-inlineBlock Search-fullicon"></span>
-            {% render_field search_form.q class="Search-field" placeholder=""%}
-            <span class="u-inlineBlock Search-closeicon"></span>
-
-            {% comment %}<input type="submit" value="" class="btn btn-default"/>{% endcomment %}
+            <div class="Search-inner">
+            	{% render_field search_form.q class="Search-field" placeholder="Type you search"%}
+            	<span class="Search-closeicon"></span>
+            </div>
+						<button type="submit" class="Search-submit">
+							<span class="Search-fullicon"></span>
+						</button>
         </form>
     </div>
 </section>
